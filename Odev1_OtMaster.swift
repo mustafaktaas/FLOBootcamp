@@ -72,3 +72,4 @@ if let otAdi = readLine(), let birimFiyat = otBirimFiyat(otAdi) {
         }
     }
 }
+print("!!!")
