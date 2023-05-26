@@ -148,7 +148,7 @@ func menu() {
         }
         
         print()
-    } while secim != 3
+    } while secim != 4
 }
 
 menu()
