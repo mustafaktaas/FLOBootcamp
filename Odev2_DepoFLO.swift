@@ -111,6 +111,13 @@ func malCikar() {
     sonIslem = "\(urunAdi) stoğundan toplam \(toplamCikartilan) adet \(urunAdi) çıkarıldı."
 }
 
+func sonIslemGoster() {
+    if let sonIslem = sonIslem {
+        print("Son İşlem: \(sonIslem)")
+    } else {
+        print("Henüz bir işlem yapılmadı.")
+    }
+}
 
 func menu() {
     var secim = 0
@@ -119,7 +126,8 @@ func menu() {
         print("---- DepoFLO v1.0 ----")
         print("1- Mal Ekle")
         print("2- Mal Çıkart")
-        print("3- Çık")
+        print("3- Son İşlem")
+        print("4- Çık")
         print("Seçim: ", terminator: "")
         
         if let giris = readLine(), let secimInt = Int(giris) {
@@ -132,6 +140,8 @@ func menu() {
         case 2:
             malCikar()
         case 3:
+            sonIslemGoster()
+        case 4:
             print("Program sonlandırılıyor...")
         default:
             print("Geçersiz bir seçim yaptınız.")
@@ -142,3 +152,4 @@ func menu() {
 }
 
 menu()
+
