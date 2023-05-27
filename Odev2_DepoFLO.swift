@@ -2,9 +2,7 @@ import Foundation
 
 // DepoFLO Project
 
-// ---Stoğu tutan dictionary yapısı---
 var stoklar = ["U01": 0, "U02": 0, "U03": 0]
-// ---Programdaki son yapılan işlemi tutan değişken---
 var sonIslem: String?
 
 func malEkle() {
@@ -51,8 +49,8 @@ func malEkle() {
         } while miktar != 0
         
         stoklar[urunKodu, default: 0] += toplamMiktar
-        print("\(urunAdi) stoğuna toplam \(toplamMiktar) adet \(urunAdi) eklendi.")
         sonIslem = "\(urunAdi) stoğuna toplam \(toplamMiktar) adet \(urunAdi) eklendi."
+        print(sonIslem!)
     }
 }
 
@@ -107,13 +105,56 @@ func malCikar() {
         } while miktar != 0
         
         stoklar[urunKodu] = max(0, stokMiktar - toplamCikartilan)
-        print("\(urunAdi) stoğundan toplam \(toplamCikartilan) adet \(urunAdi) çıkarıldı.")
         sonIslem = "\(urunAdi) stoğundan toplam \(toplamCikartilan) adet \(urunAdi) çıkarıldı."
+        print(sonIslem!)
     }
 }
 
+func ara(_ isim: String) -> String? {
+    switch isim {
+    case "Ayakkabı":
+        return "U01"
+    case "Çanta":
+        return "U02"
+    case "Gözlük":
+        return "U03"
+    default:
+        return nil
+    }
+}
+
+func stokAra() {
+    print("Aranacak ürün ismini girin: ", terminator: "")
+    if let isim = readLine(), let urunKodu = ara(isim) {
+        let stokMiktar = stoklar[urunKodu, default: 0]
+        print("Stok Miktarı: \(stokMiktar) adet")
+    } else {
+        print("Ürün bulunamadı.")
+    }
+}
+
+func stokListele() {
+    for (urunKodu, stokMiktar) in stoklar {
+        var urunAdi = ""
+        
+        switch urunKodu {
+        case "U01":
+            urunAdi = "Ayakkabı"
+        case "U02":
+            urunAdi = "Çanta"
+        case "U03":
+            urunAdi = "Gözlük"
+        default:
+            break
+        }
+        
+        print("\(urunAdi) Stok Miktarı: \(stokMiktar) adet")
+    }
+}
+
+
 func sonIslemGoster() {
-    if let sonIslem = sonIslem {
+    if let sonIslem {
         print("Son İşlem: \(sonIslem)")
     } else {
         print("Henüz bir işlem yapılmadı.")
@@ -127,8 +168,10 @@ func menu() {
         print("---- DepoFLO v1.0 ----")
         print("1- Mal Ekle")
         print("2- Mal Çıkart")
-        print("3- Son İşlem")
-        print("4- Çık")
+        print("3- Stok Ara")
+        print("4- Stok Listele")
+        print("5- Son İşlem")
+        print("6- Çık")
         print("Seçim: ", terminator: "")
         
         if let giris = readLine(), let secimInt = Int(giris) {
@@ -141,15 +184,19 @@ func menu() {
         case 2:
             malCikar()
         case 3:
-            sonIslemGoster()
+            stokAra()
         case 4:
-            print("Program sonlandırılıyor...")
+            stokListele()
+        case 5:
+            sonIslemGoster()
+        case 6:
+            print("Program sonlandırıldı.")
         default:
             print("Geçersiz bir seçim yaptınız.")
         }
         
         print()
-    } while secim != 4
+    } while secim != 6
 }
 
 menu()
