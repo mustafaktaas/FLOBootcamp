@@ -85,8 +85,6 @@ class ViewController: UIViewController {
             let alertController = UIAlertController(title: "Fatura", message: faturaMessage, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Tamam", style: .default, handler: nil)
             alertController.addAction(okAction)
-
-            // Görüntülemek için mevcut view controller üzerinde çağırın
             present(alertController, animated: true, completion: nil)
         }
     }
