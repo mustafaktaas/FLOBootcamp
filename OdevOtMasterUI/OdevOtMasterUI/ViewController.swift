@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var otTazemiSwitch: UISwitch!
     
     var otBirimFiyat: [String: Double] = [:]
-    var otTazelikEtkisi: [String: Double] = ["Kekik": -0.10, "Nane": -0.20, "Fesleğen": -0.10, "Reyhan": -0.25]
+    var otTazelikEtkisi: [String: Double] = ["Nane": -0.10, "Kekik": -0.20, "Fesleğen": -0.10, "Reyhan": -0.25]
     
     // -------Ot birim fiyatlarını döndüren fonksiyon---------
     func otBirimFiyat(_ otAdi: String) -> Double? {
@@ -73,20 +73,22 @@ class ViewController: UIViewController {
 
             let faturaMessage = """
             ******************************
-            Fatura:
-            ---------------------------------------
             OT A.Ş.
             * \(otAdi): \(miktar)kg * \(birimFiyat) TL = \(tutar) TL
             Taze \(tazeMi ? "değil." : "mi.")
             KDV (%18): \(kdv) TL
             Genel Toplam: \(genelToplam) TL
             """
-
+            showAlert(faturaMessage)
+        }
+        
+        func showAlert(_ faturaMessage: String) {
             let alertController = UIAlertController(title: "Fatura", message: faturaMessage, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Tamam", style: .default, handler: nil)
             alertController.addAction(okAction)
             present(alertController, animated: true, completion: nil)
         }
+        
     }
 }
 
