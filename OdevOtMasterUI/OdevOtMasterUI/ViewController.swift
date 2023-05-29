@@ -28,31 +28,35 @@ class ViewController: UIViewController {
     var otBirimFiyat: [String: Double] = [:]
     var otTazelikEtkisi: [String: Double] = ["Nane": -0.10, "Kekik": -0.20, "Fesleğen": -0.10, "Reyhan": -0.25]
     
-    // -------Ot birim fiyatlarını döndüren fonksiyon---------
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+       /* let otIsimler = otTazelikEtkisi.keys
+        let otAdiLabeller = [otAdiLabelNane, otAdiLabelKekik, otAdiLabelFeslegen, otAdiLabelReyhan]
+        for (index, otAdi) in otIsimler.enumerated() {
+            if let label = otAdiLabeller[index] {
+                label.text = otAdi
+            }
+        }*/
+    }
+    
     func otBirimFiyat(_ otAdi: String) -> Double? {
         return otBirimFiyat[otAdi]
     }
-    
-    // -------Tazeliğe göre fiyat düşüşünü hesaplayan fonksiyon---------
+
     func otTazelikEtkisi(_ otAdi: String, _ tazeMi: Bool) -> Double {
         let tazelikFaktoru = tazeMi ? 1.0 : 0.0
         let tazelikEtki = otTazelikEtkisi[otAdi] ?? 0.0
         return tazelikFaktoru * tazelikEtki
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let otIsimler = otTazelikEtkisi.keys
-        let otAdiLabeller = [otAdiLabelKekik, otAdiLabelReyhan, otAdiLabelFeslegen, otAdiLabelNane]
-        for (index, otAdi) in otIsimler.enumerated() {
-            if let label = otAdiLabeller[index] {
-                label.text = otAdi
-            }
-            
-        }
+    func showAlert(_ faturaMessage: String) {
+        let alertController = UIAlertController(title: "Fatura", message: faturaMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Tamam", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
+    
     
     @IBAction func otFiyatHesaplaButton(_ sender: UIButton) {
         
@@ -81,14 +85,6 @@ class ViewController: UIViewController {
             """
             showAlert(faturaMessage)
         }
-        
-        func showAlert(_ faturaMessage: String) {
-            let alertController = UIAlertController(title: "Fatura", message: faturaMessage, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Tamam", style: .default, handler: nil)
-            alertController.addAction(okAction)
-            present(alertController, animated: true, completion: nil)
-        }
-        
     }
 }
 
