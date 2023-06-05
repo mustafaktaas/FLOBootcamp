@@ -62,11 +62,6 @@ func randomNumber(_ max: Int) -> Int {
     return randomNum
 }
 
-func gelirMi() -> Bool {
-    let randomNum = randomNumber(100)
-    return randomNum < 100
-}
-
 struct RiskAppetite {
     let riskLevel: Int
     var dolar: Int
@@ -137,7 +132,7 @@ func getRiskGroup(riskAppetite: Int, incomeToInvestmentRatio: Double, age: Int) 
     }
 }
 
-func calculateInvestment(investmentAmount: Double, riskLevel: Int, exchangeRates: (Double, Double, Double, Double, Double, Double), firstName: String, lastName: String, age: Int, monthlyIncome: Double) {
+func printInvestment(investmentAmount: Double, riskLevel: Int, exchangeRates: (Double, Double, Double, Double, Double, Double)) {
     guard let riskAppetite = getRiskAppetite(riskLevel: riskLevel) else {
         print("Invalid risk level.")
         return
@@ -152,7 +147,7 @@ func calculateInvestment(investmentAmount: Double, riskLevel: Int, exchangeRates
     let faizAmount = investmentAmount / faizRate * (Double(riskAppetite.faiz) / 100)
     let btcAmount = investmentAmount / btcRate * (Double(riskAppetite.btc) / 100)
     
-    print("Risk iştahı ve Kura göre hangi yatırım aracından ne kadar aldığımız:")
+    print("\nRisk iştahı ve Kura göre hangi yatırım aracından ne kadar aldığınız:")
     print("***************************************************************")
     print("Dolar : \(dolarAmount) $")
     print("Euro : \(euroAmount) €")
@@ -161,6 +156,89 @@ func calculateInvestment(investmentAmount: Double, riskLevel: Int, exchangeRates
     print("Faiz : \(faizAmount) TL")
     print("Bitcoin : \(btcAmount) BTC")
     print("***************************************************************")
+}
+
+
+struct Investment {
+    let name: String
+    let changeProbability: Double
+    let changePercentage: Double
+}
+
+let investments: [Investment] = [
+    Investment(name: "Dolar", changeProbability: 50, changePercentage: 20),
+    Investment(name: "Euro", changeProbability: 60, changePercentage: 10),
+    Investment(name: "Altın", changeProbability: 40, changePercentage: 15),
+    Investment(name: "Gümüş", changeProbability: 30, changePercentage: 20),
+    Investment(name: "Faiz", changeProbability: 100, changePercentage: 15),
+    Investment(name: "BTC", changeProbability: 20, changePercentage: 25)
+]
+
+func calculateProfitLoss(amount: Double, investment: Investment, exchangeRate: Double) -> (Double, Double) {
+    let random = randomNumber(100)
+    let isIncrease = Double(random) < investment.changeProbability
+    let changePercentage = isIncrease ? investment.changePercentage : -investment.changePercentage
+    let profitLoss = amount * changePercentage / 100
+    let totalAmount = amount + profitLoss * exchangeRate // Gelir/Zararı TL'ye çevir
+    return (profitLoss, totalAmount)
+}
+
+func calculateInvestment(investmentAmount: Double, riskLevel: Int, exchangeRates: (Double, Double, Double, Double, Double, Double)) {
+    guard let riskAppetite = getRiskAppetite(riskLevel: riskLevel) else {
+        print("Invalid risk level.")
+        return
+    }
+    
+    let (dolarRate, euroRate, altinRate, gumusRate, faizRate, btcRate) = exchangeRates
+    
+    var totalProfitLoss: Double = 0
+    var totalAmount: Double = 0
+    
+    print("\n Hangi yatırım aracından ne kadar kar/zarar ettiğiniz:")
+    print("-------------------------------------------------------------")
+    
+    for investment in investments {
+        let amount: Double
+        let exchangeRate: Double
+        
+        switch investment.name {
+        case "Dolar":
+            amount = investmentAmount * (Double(riskAppetite.dolar) / 100)
+            exchangeRate = dolarRate
+        case "Euro":
+            amount = investmentAmount * (Double(riskAppetite.euro) / 100)
+            exchangeRate = euroRate
+        case "Altın":
+            amount = investmentAmount * (Double(riskAppetite.altin) / 100)
+            exchangeRate = altinRate
+        case "Gümüş":
+            amount = investmentAmount * (Double(riskAppetite.gumus) / 100)
+            exchangeRate = gumusRate
+        case "Faiz":
+            amount = investmentAmount * (Double(riskAppetite.faiz) / 100)
+            exchangeRate = faizRate
+        case "BTC":
+            amount = investmentAmount * (Double(riskAppetite.btc) / 100)
+            exchangeRate = btcRate
+        default:
+            amount = 0
+            exchangeRate = 1
+        }
+        
+        let (profitLoss, newAmount) = calculateProfitLoss(amount: amount, investment: investment, exchangeRate: exchangeRate)
+        totalProfitLoss += profitLoss
+        totalAmount += newAmount
+        
+        let changeType = profitLoss >= 0 ? "Kar" : "Zarar"
+        let changePercentage = profitLoss >= 0 ? investment.changePercentage : -investment.changePercentage
+        
+        print("\(investment.name) - Değişim Oranı: \(investment.changePercentage)%")
+        print("Miktar: \(amount) TL") // Miktarı TL cinsinden yazdır
+        print("Gelir/Zarar: \(profitLoss) TL (\(changeType): \(changePercentage)%)") // Gelir/Zararı TL cinsinden yazdır
+        print("-------------------------------------------------------------")
+    }
+    
+    print("\nToplam Gelir/Zarar: \(totalProfitLoss) TL")
 }
 
 func main() {
@@ -173,13 +251,18 @@ func main() {
     let monthlyIncome = readFloat("Aylık gelirinizi girin: ")
     let investmentAmount = readFloat("Yatırım miktarınızı girin: ")
     
+    print("***************************************************************")
+    print("Merhabalar \(firstName) \(lastName)")
+    
     let riskLevel = getRiskGroup(riskAppetite: riskAppetite, incomeToInvestmentRatio: Double(investmentAmount) / Double(monthlyIncome), age: age)
     
     print("Güncel risk iştahınız: \(riskLevel)")
     
-    let exchangeRates: (Double, Double, Double, Double, Double, Double) = (8.3, 10.1, 510, 7.5, 1000, 1)
+    let exchangeRates: (Double, Double, Double, Double, Double, Double) = (8.3, 10.1, 510, 7.5, 1, 1000)
     
-    calculateInvestment(investmentAmount: Double(investmentAmount), riskLevel: riskLevel, exchangeRates: exchangeRates, firstName: firstName, lastName: lastName, age: age, monthlyIncome: Double(monthlyIncome))
+    printInvestment(investmentAmount: Double(investmentAmount), riskLevel: riskLevel, exchangeRates: exchangeRates)
+    
+    calculateInvestment(investmentAmount: Double(investmentAmount), riskLevel: riskLevel, exchangeRates: exchangeRates)
     
     byebye()
 }
