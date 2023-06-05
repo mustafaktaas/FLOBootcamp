@@ -1,6 +1,7 @@
 
 //OdevYatirimSimulator
-// 31-05-2023
+// 05-06-2023
+
 
 import Foundation
 
@@ -99,9 +100,7 @@ func getRiskGroup(riskAppetite: Int, incomeToInvestmentRatio: Double, age: Int) 
     /*
     case let (ratio, age) where ratio >= 0.5 && ratio < 1 && age > 40 && age <= 50:
         if riskAppetite.btc > 0 {
-            // Eğer bitcoin yatırımı varsa
             let btcAllocation = riskAppetite.btc / 5
-            // Bitcoin yatırımına düşen yüzdeyi diğer 5 yatırım tipine eşit şekilde böl
             return RiskAppetite(riskLevel: riskAppetite.riskLevel,
                                 dolar: riskAppetite.dolar + btcAllocation,
                                 euro: riskAppetite.euro + btcAllocation,
@@ -110,7 +109,6 @@ func getRiskGroup(riskAppetite: Int, incomeToInvestmentRatio: Double, age: Int) 
                                 faiz: riskAppetite.faiz + btcAllocation,
                                 btc: 0)
         }
-        // Bitcoin yatırımı yoksa aynı risk iştahını döndür
         return riskAppetite
      */
     case let (ratio, age) where ratio >= 0.5 && ratio < 1 && age > 50:
@@ -148,16 +146,15 @@ func printInvestment(investmentAmount: Double, riskLevel: Int, exchangeRates: (D
     let btcAmount = investmentAmount / btcRate * (Double(riskAppetite.btc) / 100)
     
     print("\nRisk iştahı ve Kura göre hangi yatırım aracından ne kadar aldığınız:")
-    print("***************************************************************")
+    print("*******")
     print("Dolar : \(dolarAmount) $")
     print("Euro : \(euroAmount) €")
     print("Altın : \(altinAmount) GR")
     print("Gümüş : \(gumusAmount) GR")
     print("Faiz : \(faizAmount) TL")
     print("Bitcoin : \(btcAmount) BTC")
-    print("***************************************************************")
+    print("*******")
 }
-
 
 struct Investment {
     let name: String
@@ -179,7 +176,7 @@ func calculateProfitLoss(amount: Double, investment: Investment, exchangeRate: D
     let isIncrease = Double(random) < investment.changeProbability
     let changePercentage = isIncrease ? investment.changePercentage : -investment.changePercentage
     let profitLoss = amount * changePercentage / 100
-    let totalAmount = amount + profitLoss * exchangeRate // Gelir/Zararı TL'ye çevir
+    let totalAmount = amount + profitLoss * exchangeRate
     return (profitLoss, totalAmount)
 }
 
@@ -233,8 +230,8 @@ func calculateInvestment(investmentAmount: Double, riskLevel: Int, exchangeRates
         let changePercentage = profitLoss >= 0 ? investment.changePercentage : -investment.changePercentage
         
         print("\(investment.name) - Değişim Oranı: \(investment.changePercentage)%")
-        print("Miktar: \(amount) TL") // Miktarı TL cinsinden yazdır
-        print("Gelir/Zarar: \(profitLoss) TL (\(changeType): \(changePercentage)%)") // Gelir/Zararı TL cinsinden yazdır
+        print("Miktar: \(amount) TL")
+        print("Gelir/Zarar: \(profitLoss) TL (\(changeType): \(changePercentage)%)")
         print("-------------------------------------------------------------")
     }
     
@@ -251,7 +248,7 @@ func main() {
     let monthlyIncome = readFloat("Aylık gelirinizi girin: ")
     let investmentAmount = readFloat("Yatırım miktarınızı girin: ")
     
-    print("***************************************************************")
+    print("*******")
     print("Merhabalar \(firstName) \(lastName)")
     
     let riskLevel = getRiskGroup(riskAppetite: riskAppetite, incomeToInvestmentRatio: Double(investmentAmount) / Double(monthlyIncome), age: age)
@@ -268,3 +265,4 @@ func main() {
 }
 
 main()
+
