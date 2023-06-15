@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
@@ -26,13 +25,19 @@ class ViewController: UIViewController {
         }
         
         if let person = PersonList.first(where: { $0.username == username && $0.password == password }) {
-            navigateToDifferentPage()
+            navigateToSuccessPage()
         } else {
             showAlert()
         }
     }
     
-    func navigateToDifferentPage() {}
+    
+    func navigateToSuccessPage() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "SuccessPage")
+        viewController.modalPresentationStyle = .overFullScreen
+        present(viewController, animated: true)
+    }
     
     func showAlert() {
         let alert = UIAlertController(title: "Hata", message: "Kullanıcı adı veya şifre yanlış.", preferredStyle: .alert)

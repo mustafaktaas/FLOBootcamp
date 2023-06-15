@@ -14,5 +14,6 @@ struct Person {
 
 let PersonList = [
 Person(username: "admin", password: "12345"),
+Person(username: "Deneme", password: "12345abc"),
 Person(username: "Mustafa", password: "12345")
 ]

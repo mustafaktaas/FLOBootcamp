@@ -11,53 +11,52 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoginScreenUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="LoginScreenUI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Giriş Yap" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkG-RU-GIu">
-                                <rect key="frame" x="143" y="112" width="107" height="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giriş Yap" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkG-RU-GIu">
+                                <rect key="frame" x="143" y="112" width="107" height="30.666666666666657"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MT4-HF-nOo">
-                                <rect key="frame" x="67" y="284" width="250" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MT4-HF-nOo">
+                                <rect key="frame" x="67" y="241" width="250" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kullanıcı Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V6c-Mf-JoK">
-                                <rect key="frame" x="67" y="234" width="250" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kullanıcı Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V6c-Mf-JoK">
+                                <rect key="frame" x="67" y="199" width="250" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40o-rn-Slb">
-                                <rect key="frame" x="127" y="385" width="138" height="35"/>
+                                <rect key="frame" x="127" y="309" width="138" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Giriş Yap"/>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76o-A8-WVz"/>
-                                    <segue destination="gQd-Si-xYF" kind="showDetail" id="fhx-s8-bUl"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="V6c-Mf-JoK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="90M-rg-vtp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="40o-rn-Slb" secondAttribute="trailing" constant="128" id="Bgi-Q6-tca"/>
-                            <constraint firstItem="40o-rn-Slb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="Geq-i4-ImE"/>
-                            <constraint firstItem="OkG-RU-GIu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="IKm-h5-Rbh"/>
-                            <constraint firstItem="MT4-HF-nOo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="QtY-JA-xGs"/>
-                            <constraint firstItem="40o-rn-Slb" firstAttribute="top" secondItem="MT4-HF-nOo" secondAttribute="bottom" constant="67" id="Skp-dK-s3K"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MT4-HF-nOo" secondAttribute="trailing" constant="76" id="ZJ5-lT-diQ"/>
-                            <constraint firstItem="MT4-HF-nOo" firstAttribute="top" secondItem="V6c-Mf-JoK" secondAttribute="bottom" constant="27" id="anf-wH-FKB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V6c-Mf-JoK" secondAttribute="trailing" constant="76" id="fbf-Ed-EsP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OkG-RU-GIu" secondAttribute="trailing" constant="143" id="qQD-eF-4uB"/>
-                            <constraint firstItem="V6c-Mf-JoK" firstAttribute="top" secondItem="OkG-RU-GIu" secondAttribute="bottom" constant="84" id="rhk-Dr-1ae"/>
-                            <constraint firstItem="OkG-RU-GIu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="wWx-fX-6VP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OkG-RU-GIu" secondAttribute="trailing" constant="143" id="CPu-mW-OOq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="40o-rn-Slb" secondAttribute="trailing" constant="128" id="DLy-B5-y2b"/>
+                            <constraint firstItem="V6c-Mf-JoK" firstAttribute="top" secondItem="OkG-RU-GIu" secondAttribute="bottom" constant="56.329999999999998" id="EdZ-eO-UMk"/>
+                            <constraint firstItem="OkG-RU-GIu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="FVf-ze-rv3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V6c-Mf-JoK" secondAttribute="trailing" constant="76" id="H36-Ab-caz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="40o-rn-Slb" secondAttribute="bottom" constant="450" id="JBm-uY-7Lc"/>
+                            <constraint firstItem="V6c-Mf-JoK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="O9p-3W-6kr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MT4-HF-nOo" secondAttribute="trailing" constant="76" id="W9B-Gc-9cl"/>
+                            <constraint firstItem="MT4-HF-nOo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="brQ-u7-XYN"/>
+                            <constraint firstItem="40o-rn-Slb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="daW-Zu-tKG"/>
+                            <constraint firstItem="OkG-RU-GIu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="fab-eL-2yY"/>
+                            <constraint firstItem="MT4-HF-nOo" firstAttribute="top" secondItem="V6c-Mf-JoK" secondAttribute="bottom" constant="8" symbolic="YES" id="x68-9x-PBi"/>
                         </constraints>
                     </view>
                     <connections>
@@ -69,16 +68,17 @@
             </objects>
             <point key="canvasLocation" x="124.42748091603053" y="-34.507042253521128"/>
         </scene>
-        <!--View Controller-->
+        <!--SuccessPage-->
         <scene sceneID="lVQ-L7-YLm">
             <objects>
-                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gQd-Si-xYF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SuccessPage" title="SuccessPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gQd-Si-xYF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="za7-ss-1Qc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Başarılı giriş yaptınız..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtH-bp-CFr">
-                                <rect key="frame" x="81.333333333333329" y="405.66666666666669" width="230.33333333333337" height="30.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Başarılı giriş yaptınız..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtH-bp-CFr">
+                                <rect key="frame" x="81.333333333333329" y="410.66666666666669" width="230.33333333333337" height="30.666666666666686"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -87,10 +87,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z4w-vq-wHu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="mtH-bp-CFr" firstAttribute="centerY" secondItem="za7-ss-1Qc" secondAttribute="centerY" id="Wzy-91-GM2"/>
-                            <constraint firstItem="mtH-bp-CFr" firstAttribute="centerX" secondItem="za7-ss-1Qc" secondAttribute="centerX" id="u49-uQ-DUZ"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCl-Iv-bxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
