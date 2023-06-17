@@ -1,7 +1,7 @@
 # FLOBootcamp
 All projects in FLO iOS Developer Bootcamp.
 
-# Ödev Sayı Tahmin
+##Ödev Sayı Tahmin
 
 Bu uygulamada 1 ile 10 arasında random bir sayı atanıyor. Biz bu sayıyı tahmin etmeye çalışıyoruz ve başlangıçta 5 hakkımız var. Her denememizde hakkımız azalıyor. 5 denemede bulup bulamamamıza göre diğer saydada resim ve yazılar dinamik olarak değişecek.
 
