@@ -23,18 +23,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MT4-HF-nOo">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MT4-HF-nOo">
                                 <rect key="frame" x="67" y="241" width="250" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kullanıcı Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V6c-Mf-JoK">
-                                <rect key="frame" x="67" y="199" width="250" height="34"/>
+                                <rect key="frame" x="67" y="198.66666666666666" width="250" height="34.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40o-rn-Slb">
-                                <rect key="frame" x="127" y="309" width="138" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40o-rn-Slb">
+                                <rect key="frame" x="127" y="328" width="138" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Giriş Yap"/>
                                 <connections>
@@ -47,14 +47,15 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OkG-RU-GIu" secondAttribute="trailing" constant="143" id="CPu-mW-OOq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="40o-rn-Slb" secondAttribute="trailing" constant="128" id="DLy-B5-y2b"/>
-                            <constraint firstItem="V6c-Mf-JoK" firstAttribute="top" secondItem="OkG-RU-GIu" secondAttribute="bottom" constant="56.329999999999998" id="EdZ-eO-UMk"/>
+                            <constraint firstItem="V6c-Mf-JoK" firstAttribute="top" secondItem="OkG-RU-GIu" secondAttribute="bottom" constant="56" id="EdZ-eO-UMk"/>
                             <constraint firstItem="OkG-RU-GIu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="FVf-ze-rv3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V6c-Mf-JoK" secondAttribute="trailing" constant="76" id="H36-Ab-caz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="40o-rn-Slb" secondAttribute="bottom" constant="450" id="JBm-uY-7Lc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="40o-rn-Slb" secondAttribute="bottom" constant="455" id="JBm-uY-7Lc"/>
                             <constraint firstItem="V6c-Mf-JoK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="O9p-3W-6kr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MT4-HF-nOo" secondAttribute="trailing" constant="76" id="W9B-Gc-9cl"/>
                             <constraint firstItem="MT4-HF-nOo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="brQ-u7-XYN"/>
                             <constraint firstItem="40o-rn-Slb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="daW-Zu-tKG"/>
+                            <constraint firstItem="40o-rn-Slb" firstAttribute="top" secondItem="MT4-HF-nOo" secondAttribute="bottom" constant="53" id="dgg-4c-CRY"/>
                             <constraint firstItem="OkG-RU-GIu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="fab-eL-2yY"/>
                             <constraint firstItem="MT4-HF-nOo" firstAttribute="top" secondItem="V6c-Mf-JoK" secondAttribute="bottom" constant="8" symbolic="YES" id="x68-9x-PBi"/>
                         </constraints>
@@ -71,14 +72,25 @@
         <!--SuccessPage-->
         <scene sceneID="lVQ-L7-YLm">
             <objects>
-                <viewController storyboardIdentifier="SuccessPage" title="SuccessPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gQd-Si-xYF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SuccessPage" title="SuccessPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gQd-Si-xYF" customClass="SuccessViewController" customModule="LoginScreenUI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="za7-ss-1Qc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Başarılı giriş yaptınız..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtH-bp-CFr">
-                                <rect key="frame" x="81.333333333333329" y="410.66666666666669" width="230.33333333333337" height="30.666666666666686"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paj-eC-jNa">
+                                <rect key="frame" x="150" y="328" width="93.333333333333314" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Çıkış Yap"/>
+                                <connections>
+                                    <action selector="exitButton:" destination="gQd-Si-xYF" eventType="touchUpInside" id="BSD-00-O3h"/>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CLc-dc-lPw"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basarili" translatesAutoresizingMaskIntoConstraints="NO" id="r3r-tG-nLt">
+                                <rect key="frame" x="151" y="181" width="91" height="91"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Başarılı giriş yaptınız..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtH-bp-CFr">
+                                <rect key="frame" x="81.000000000000014" y="110" width="230.33333333333337" height="30.666666666666657"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -87,6 +99,17 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z4w-vq-wHu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Paj-eC-jNa" firstAttribute="top" secondItem="r3r-tG-nLt" secondAttribute="bottom" constant="56" id="7XR-Wd-Yuf"/>
+                            <constraint firstItem="z4w-vq-wHu" firstAttribute="trailing" secondItem="r3r-tG-nLt" secondAttribute="trailing" constant="151" id="Fe1-3h-Vw2"/>
+                            <constraint firstItem="z4w-vq-wHu" firstAttribute="trailing" secondItem="mtH-bp-CFr" secondAttribute="trailing" constant="81.670000000000002" id="KeU-wo-CS7"/>
+                            <constraint firstItem="r3r-tG-nLt" firstAttribute="leading" secondItem="z4w-vq-wHu" secondAttribute="leading" constant="151" id="PHy-3t-aZH"/>
+                            <constraint firstItem="r3r-tG-nLt" firstAttribute="top" secondItem="mtH-bp-CFr" secondAttribute="bottom" constant="40.329999999999998" id="Slp-dC-9AC"/>
+                            <constraint firstItem="mtH-bp-CFr" firstAttribute="top" secondItem="z4w-vq-wHu" secondAttribute="top" constant="51" id="jax-m1-Pnk"/>
+                            <constraint firstItem="Paj-eC-jNa" firstAttribute="leading" secondItem="z4w-vq-wHu" secondAttribute="leading" constant="150" id="lDz-Tv-eyT"/>
+                            <constraint firstItem="z4w-vq-wHu" firstAttribute="trailing" secondItem="Paj-eC-jNa" secondAttribute="trailing" constant="149.66999999999999" id="ysr-pv-S5d"/>
+                            <constraint firstItem="mtH-bp-CFr" firstAttribute="leading" secondItem="z4w-vq-wHu" secondAttribute="leading" constant="81" id="zIU-TN-UWl"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCl-Iv-bxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -95,6 +118,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="basarili" width="91" height="91"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
