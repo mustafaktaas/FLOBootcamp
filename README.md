@@ -1,6 +1,12 @@
 # FLOBootcamp
 All projects in FLO iOS Developer Bootcamp.
 
+## Ödev Unlu Alıntılar
+
+- Bu uygulamada iki sayfa vardır. İlk sayfa giriş sayfasıdır. Giriş yapılınca karşımıza çıkan sayfa ise bir yazarın adı, o yazardan bir alıntı ve yazarın cinsiyetine göre gösterilen bir resmi içeriyor. Butona basıldığında da bu yazı ve diğer özellikler random olarak değişiyor.
+
+https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/dd7dfc38-26a6-47ad-8ab0-25bc376486d3
+
 ## Ödev Sayı Tahmin
 
 - Bu uygulamada 1 ile 10 arasında random bir sayı atanıyor. Biz bu sayıyı tahmin etmeye çalışıyoruz ve başlangıçta 5 hakkımız var. Her denememizde hakkımız azalıyor. 5 denemede bulup bulamamamıza göre diğer saydada resim ve yazılar dinamik olarak değişecek.
