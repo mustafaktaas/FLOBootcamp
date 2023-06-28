@@ -29,7 +29,7 @@ class ForgetPasswordViewController: UIViewController {
                         DuplicateFuncs.alertMessage(title: "Network error", message: error.localizedDescription, vc: self)
                     } else {
                         DuplicateFuncs.alertMessageWithHandler(title: "Success", message: "Please check your email", vc: self) {
-                            self.performSegue(withIdentifier: K.Segues.loginToForget, sender: self)
+                            self.performSegue(withIdentifier: K.Segues.forgetToLogin, sender: self)
                         }
                     }
                 }

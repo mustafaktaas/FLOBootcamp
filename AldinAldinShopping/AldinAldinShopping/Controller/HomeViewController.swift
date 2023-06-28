@@ -11,14 +11,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tabBarSetup()
+        self.navigationController?.isNavigationBarHidden = true
     }
-    
-    func tabBarSetup() {
-        self.tabBarController?.navigationItem.hidesBackButton = true
-        tabBarController!.tabBar.items?[1].badgeValue = "0"
-    }
-
 
 }

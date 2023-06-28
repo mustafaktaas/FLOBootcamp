@@ -20,7 +20,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.tintColor = UIColor.darkGray
+        UINavigationBar.appearance().tintColor = UIColor.darkGray
         // Do any additional setup after loading the view.
     }
     

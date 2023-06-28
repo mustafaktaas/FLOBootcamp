@@ -48,6 +48,9 @@
 		243F22522A4B36DF00213064 /* RepeatFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F22512A4B36DF00213064 /* RepeatFunctions.swift */; };
 		243F22542A4B36F100213064 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F22532A4B36F100213064 /* Constants.swift */; };
 		243F22562A4B60D300213064 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F22552A4B60D300213064 /* HomeViewController.swift */; };
+		243F22582A4B729D00213064 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F22572A4B729C00213064 /* TabBarViewController.swift */; };
+		243F225A2A4B77F600213064 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F22592A4B77F600213064 /* CartViewController.swift */; };
+		243F225C2A4B780300213064 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F225B2A4B780300213064 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		243F22512A4B36DF00213064 /* RepeatFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatFunctions.swift; sourceTree = "<group>"; };
 		243F22532A4B36F100213064 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		243F22552A4B60D300213064 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		243F22572A4B729C00213064 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		243F22592A4B77F600213064 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		243F225B2A4B780300213064 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +161,12 @@
 		243F220D2A4B209200213064 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				243F22152A4B2A6200213064 /* User */,
+				243F22152A4B2A6200213064 /* LoginRegister */,
 				243F21FB2A4B207D00213064 /* ViewController.swift */,
 				243F22552A4B60D300213064 /* HomeViewController.swift */,
+				243F22572A4B729C00213064 /* TabBarViewController.swift */,
+				243F22592A4B77F600213064 /* CartViewController.swift */,
+				243F225B2A4B780300213064 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,14 +184,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		243F22152A4B2A6200213064 /* User */ = {
+		243F22152A4B2A6200213064 /* LoginRegister */ = {
 			isa = PBXGroup;
 			children = (
 				243F220F2A4B253200213064 /* RegisterViewController.swift */,
 				243F22112A4B254100213064 /* LoginViewController.swift */,
 				243F22132A4B2A5100213064 /* ForgetPasswordViewController.swift */,
 			);
-			path = User;
+			path = LoginRegister;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,12 +300,15 @@
 			files = (
 				243F21FC2A4B207D00213064 /* ViewController.swift in Sources */,
 				243F22172A4B2A9900213064 /* UserModel.swift in Sources */,
+				243F22582A4B729D00213064 /* TabBarViewController.swift in Sources */,
 				243F22522A4B36DF00213064 /* RepeatFunctions.swift in Sources */,
+				243F225A2A4B77F600213064 /* CartViewController.swift in Sources */,
 				243F21F82A4B207D00213064 /* AppDelegate.swift in Sources */,
 				243F21FA2A4B207D00213064 /* SceneDelegate.swift in Sources */,
 				243F22562A4B60D300213064 /* HomeViewController.swift in Sources */,
 				243F22122A4B254100213064 /* LoginViewController.swift in Sources */,
 				243F22142A4B2A5100213064 /* ForgetPasswordViewController.swift in Sources */,
+				243F225C2A4B780300213064 /* ProfileViewController.swift in Sources */,
 				243F22102A4B253200213064 /* RegisterViewController.swift in Sources */,
 				243F22542A4B36F100213064 /* Constants.swift in Sources */,
 			);
