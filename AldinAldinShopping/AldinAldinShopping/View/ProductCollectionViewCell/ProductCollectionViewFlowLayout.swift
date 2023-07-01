@@ -1,16 +1,18 @@
 //
-//  CollectionViewFlowLayout.swift
+//  ProductCollectionViewFlowLayout.swift
 //  AldinAldinShopping
 //
 //  Created by Mustafa Aktas on 29.06.2023.
 //
 
+import Foundation
+
 import UIKit
 
-class CategoryCollectionViewFlowLayout: UICollectionViewFlowLayout {
+class ProductCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     let sutunSayisi: Int
-    var yukseklikOrani: CGFloat = (1.0 / 2.5)
+    var yukseklikOrani: CGFloat = (2.6 / 2.0)
     
     init(sutunSayisi: Int, minSutunAraligi: CGFloat = 0, minSatirAraligi: CGFloat = 0) {
         self.sutunSayisi = sutunSayisi
@@ -31,11 +33,12 @@ class CategoryCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         let araliklar = collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(sutunSayisi - 1)
         
-        let elemaninGenisligi = (collectionView.bounds.size.width - araliklar) / CGFloat(sutunSayisi).rounded(.down) // .rouned(.down) ile asagiya yuvarladik.
+        let elemaninGenisligi = (collectionView.bounds.size.width - araliklar) / CGFloat(sutunSayisi).rounded(.down)
         let elemaninYuksekligi = elemaninGenisligi * yukseklikOrani
         
         itemSize = CGSize(width: elemaninGenisligi, height: elemaninYuksekligi)
         
     }
+    
     
 }

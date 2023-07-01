@@ -22,8 +22,8 @@ struct K {
     }
     
     struct CollectionViews {
-        static let topCollectionViewNibNameAndIdentifier = "CategoriesCollectionViewCell"
-        static let bottomCollectionViewNibNameAndIdentifier = "ProductsCollectionViewCell"
+        static let topCollectionViewNibNameAndIdentifier = "CategoryCollectionViewCell"
+        static let bottomCollectionViewNibNameAndIdentifier = "ProductCollectionViewCell"
     }
     
     struct Network {
@@ -33,7 +33,7 @@ struct K {
     }
     
     struct TableView {
-        static let categorizedTableViewCell = "CategorizedTableViewCell"
+        static let categorizedTableViewCell = "CategorizeTableViewCell"
         static let cartTableViewCell = "CartTableViewCell"
     }
     

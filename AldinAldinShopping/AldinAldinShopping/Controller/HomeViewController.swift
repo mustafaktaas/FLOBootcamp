@@ -11,8 +11,7 @@ import SDWebImage
 
 class HomeViewController: UIViewController {
 
-    
-    @IBOutlet weak var producCollectionView: UICollectionView!
+    @IBOutlet weak var productCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     static var productList: [ProductModel] = []
@@ -86,12 +85,12 @@ class HomeViewController: UIViewController {
     func collectionSetup() {
         categoryCollectionView.register(UINib(nibName: K.CollectionViews.topCollectionViewNibNameAndIdentifier, bundle: nil), forCellWithReuseIdentifier: K.CollectionViews.topCollectionViewNibNameAndIdentifier)
         
-        categoryCollectionView.collectionViewLayout = TopCollectionViewColumnFlowLayout(sutunSayisi: 2, minSutunAraligi: 5, minSatirAraligi: 5)
+        categoryCollectionView.collectionViewLayout = CategoryCollectionViewFlowLayout(sutunSayisi: 2, minSutunAraligi: 5, minSatirAraligi: 5)
         
         
         productCollectionView.register(UINib(nibName: K.CollectionViews.bottomCollectionViewNibNameAndIdentifier, bundle: nil), forCellWithReuseIdentifier: K.CollectionViews.bottomCollectionViewNibNameAndIdentifier)
         
-        productCollectionView.collectionViewLayout = BottomCollectionViewColumnFlowLayout(sutunSayisi: 2, minSutunAraligi: 5, minSatirAraligi: 5)
+        productCollectionView.collectionViewLayout = ProductCollectionViewFlowLayout(sutunSayisi: 2, minSutunAraligi: 5, minSatirAraligi: 5)
     }
     
     func changeVCcategoryToTableView(category: String) {
@@ -99,19 +98,19 @@ class HomeViewController: UIViewController {
             
         case "electronics":
             let cat = "electronics"
-            CategorizedViewController.selectedCategory = cat
+            CategorizeViewController.selectedCategory = cat
             
         case "jewelery":
             let cat = "jewelery"
-            CategorizedViewController.selectedCategory = cat
+            CategorizeViewController.selectedCategory = cat
             
         case "men's clothing":
             let cat = "men's%20clothing"
-            CategorizedViewController.selectedCategory = cat
+            CategorizeViewController.selectedCategory = cat
             
         case "women's clothing":
             let cat = "women's%20clothing"
-            CategorizedViewController.selectedCategory = cat
+            CategorizeViewController.selectedCategory = cat
             
         default:
             DuplicateFuncs.alertMessage(title: "Category Error", message: "", vc: self)
@@ -128,7 +127,7 @@ class HomeViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: K.Segues.productDetailViewController)
         show(vc, sender: self)
     }
-
+    
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -150,9 +149,9 @@ extension HomeViewController: UICollectionViewDataSource {
         switch collectionView {
             
         case categoryCollectionView:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.CollectionViews.topCollectionViewNibNameAndIdentifier, for: indexPath) as! CategoriesCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.CollectionViews.topCollectionViewNibNameAndIdentifier, for: indexPath) as! CategoryCollectionViewCell
             let category = HomeViewController.categoryList[indexPath.row].category
-            cell.categoryLabel.text = category?.capitalized
+            cell.categoryNameLabel.text = category?.capitalized
             
             switch category {
             case "electronics":
@@ -169,12 +168,12 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
             
         case productCollectionView:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.CollectionViews.bottomCollectionViewNibNameAndIdentifier, for: indexPath) as! ProductsCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.CollectionViews.bottomCollectionViewNibNameAndIdentifier, for: indexPath) as! ProductCollectionViewCell
             let u = HomeViewController.productList[indexPath.row]
             cell.productImageView.sd_setImage(with: URL(string: u.image!), placeholderImage: UIImage(systemName: "photo.on.rectangle.angled"))
             cell.productNameLabel.text = u.title
             cell.productRateLabel.text = "★ \(u.rate!) "
-            cell.productPriceLabe.text = "$\(u.price!)"
+            cell.productPriceLabel.text = "₺\(u.price!)"
             return cell
             
         default:

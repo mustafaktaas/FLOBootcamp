@@ -10,13 +10,12 @@ import UIKit
 class CategoryCollectionViewCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        //koseleri yuvarlaklastirma
+
         layer.cornerRadius = 15
         layer.masksToBounds = true
     }
