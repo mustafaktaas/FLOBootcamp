@@ -20,11 +20,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        productCollectionView.showsVerticalScrollIndicator = false
         collectionSetup()
         tabBarSetup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
         fetchCategories()
         fetchProducts()
     }
@@ -97,20 +99,16 @@ class HomeViewController: UIViewController {
         switch category {
             
         case "electronics":
-            let cat = "electronics"
-            CategorizeViewController.selectedCategory = cat
+            CategorizeViewController.selectedCategory = "electronics"
             
         case "jewelery":
-            let cat = "jewelery"
-            CategorizeViewController.selectedCategory = cat
+            CategorizeViewController.selectedCategory = "jewelery"
             
         case "men's clothing":
-            let cat = "men's%20clothing"
-            CategorizeViewController.selectedCategory = cat
+            CategorizeViewController.selectedCategory = "men's%20clothing"
             
         case "women's clothing":
-            let cat = "women's%20clothing"
-            CategorizeViewController.selectedCategory = cat
+            CategorizeViewController.selectedCategory = "women's%20clothing"
             
         default:
             DuplicateFuncs.alertMessage(title: "Category Error", message: "", vc: self)
@@ -193,8 +191,8 @@ extension HomeViewController: UICollectionViewDelegate {
             }
             
         case productCollectionView:
-            if let idd = HomeViewController.productList[indexPath.row].id {
-                changeVCHomeToProductDetail(id: idd)
+            if let product = HomeViewController.productList[indexPath.row].id {
+                changeVCHomeToProductDetail(id: product)
             }
             
         default:

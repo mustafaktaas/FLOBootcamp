@@ -13,7 +13,7 @@
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCollectionViewCell" id="ugf-sK-mAP" customClass="CategoryCollectionViewCell" customModule="AldinAldinShopping" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="180" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2fF-p0-syh" customClass="UICollectionViewCell">
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2fF-p0-syh">
                 <rect key="frame" x="0.0" y="0.0" width="180" height="60"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>

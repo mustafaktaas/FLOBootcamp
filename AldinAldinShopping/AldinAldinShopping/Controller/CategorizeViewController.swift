@@ -20,6 +20,9 @@ class CategorizeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewCellSetup()
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.style = .editor
+        tableView.showsVerticalScrollIndicator = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +31,10 @@ class CategorizeViewController: UIViewController {
         categoryNameLabelSetup(name: CategorizeViewController.selectedCategory)
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
+    
     func tableViewCellSetup() {
         tableView.register(UINib(nibName: K.TableView.categorizedTableViewCell, bundle: nil), forCellReuseIdentifier: K.TableView.categorizedTableViewCell)
     }
@@ -89,7 +96,7 @@ extension CategorizeViewController: UITableViewDataSource {
         let u = CategorizeViewController.filteredProductList[indexPath.row]
         cell.productNameLabel.text = u.title
         cell.productDescriptionLabel.text = u.description
-        cell.productRateLabel.text = "⭐️ \(u.rate!) "
+        cell.productRateLabel.text = "★ \(u.rate!) "
         cell.productPriceLabel.text = "\(u.price!)$"
         cell.productImageView.sd_setImage(with: URL(string: u.image!), placeholderImage: UIImage(systemName: "photo"))
         return cell

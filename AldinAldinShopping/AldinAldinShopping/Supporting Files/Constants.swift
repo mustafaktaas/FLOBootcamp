@@ -12,7 +12,7 @@ struct K {
         static let loginToHome = "loginToHome"
         static let registerToLogin = "registerToLogin"
         static let forgetToLogin = "forgetToLogin"
-        static let categoryTableView = "CategoryTableViewVC"
+        static let categoryTableView = "categoryTableView"
         static let productDetailViewController = "productDetailViewController"
         static let loginToForget = "loginToForget"
     }

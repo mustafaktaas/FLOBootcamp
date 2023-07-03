@@ -26,6 +26,8 @@ class ProductDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.style = .editor
         fetchCategoryProducts(selectedId: ProductDetailViewController.selectedProductID)
     }
 
@@ -59,7 +61,7 @@ class ProductDetailViewController: UIViewController {
                     let productData = try JSONDecoder().decode(ProductData.self, from: response.data!)
                     DispatchQueue.main.async {
                         self.productImage.sd_setImage(with: URL(string: productData.image), placeholderImage: UIImage(systemName: "photo"))
-                        self.productRate.text = "⭐️\(productData.rating.rate)"
+                        self.productRate.text = "★\(productData.rating.rate)"
                         self.productPrice.text = "$\(productData.price)"
                         self.productTitle.text = productData.title
                         self.productDescription.text = productData.description
