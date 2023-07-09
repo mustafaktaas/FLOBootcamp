@@ -11,9 +11,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        NetworkUtils.checkConnection(in: self) {
+                    NetworkUtils.retryButtonTapped(in: self)
+                }
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+            // Connection Check
+            NetworkUtils.checkConnection(in: self) {
+                NetworkUtils.retryButtonTapped(in: self)
+            }
+        }
 
 }
 

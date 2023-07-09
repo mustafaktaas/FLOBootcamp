@@ -20,11 +20,21 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NetworkUtils.checkConnection(in: self) {
+                    NetworkUtils.retryButtonTapped(in: self)
+                }
         self.navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.tintColor = UIColor.darkGray
         UINavigationBar.appearance().tintColor = UIColor.darkGray
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            // Connection Check
+            NetworkUtils.checkConnection(in: self) {
+                NetworkUtils.retryButtonTapped(in: self)
+            }
+        }
     
     @IBAction func signInButton(_ sender: UIButton) {
         if let email = emailTextField.text, let password = passwordTextField.text {

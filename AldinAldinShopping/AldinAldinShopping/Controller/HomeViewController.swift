@@ -186,6 +186,7 @@ extension HomeViewController: UICollectionViewDelegate {
         switch collectionView {
             
         case categoryCollectionView:
+            // TODO: Safely unwrapped index controlü koy
             if let category = HomeViewController.categoryList[indexPath.row].category {
                 changeVCcategoryToTableView(category: category)
             }

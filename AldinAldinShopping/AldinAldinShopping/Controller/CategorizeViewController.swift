@@ -31,10 +31,6 @@ class CategorizeViewController: UIViewController {
         categoryNameLabelSetup(name: CategorizeViewController.selectedCategory)
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
-    }
-    
     func tableViewCellSetup() {
         tableView.register(UINib(nibName: K.TableView.categorizedTableViewCell, bundle: nil), forCellReuseIdentifier: K.TableView.categorizedTableViewCell)
     }

@@ -17,24 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Black White Minimalist SImple Monogram Typography Logo" translatesAutoresizingMaskIntoConstraints="NO" id="HrM-EC-EPa">
-                                <rect key="frame" x="0.0" y="103" width="393" height="244"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Black White Minimalist SImple Monogram Typography Logo" translatesAutoresizingMaskIntoConstraints="NO" id="HrM-EC-EPa">
+                                <rect key="frame" x="16" y="103" width="361" height="361"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HrM-EC-EPa" secondAttribute="height" multiplier="1:1" id="7kL-Gj-GWH"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7E-eK-izB">
-                                <rect key="frame" x="107" y="502" width="179" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Giriş Yap" cornerStyle="capsule">
-                                    <color key="baseBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="5pm-B3-vPN" kind="show" id="hHN-Bc-WEN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYg-3l-WDD">
-                                <rect key="frame" x="107" y="590" width="179" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYg-3l-WDD">
+                                <rect key="frame" x="107" y="635" width="179" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PYg-3l-WDD" secondAttribute="height" multiplier="20:7" id="v4i-89-kmY"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Üye Ol" cornerStyle="capsule">
                                     <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,16 +36,48 @@
                                     <segue destination="xlY-u6-8YW" kind="show" id="2DD-d9-zxP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AldınAldın v1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoW-ur-GzS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AldınAldın v1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoW-ur-GzS">
                                 <rect key="frame" x="31" y="786" width="330" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="iVc-aO-cZB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" systemColor="labelColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7E-eK-izB">
+                                <rect key="frame" x="107" y="551" width="179" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="46t-hW-fiC"/>
+                                    <constraint firstAttribute="width" secondItem="w7E-eK-izB" secondAttribute="height" multiplier="20:7" id="MX2-ZS-20l"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Giriş Yap" cornerStyle="capsule">
+                                    <color key="baseBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="5pm-B3-vPN" kind="show" id="hHN-Bc-WEN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="w7E-eK-izB" firstAttribute="trailing" secondItem="PYg-3l-WDD" secondAttribute="trailing" id="6wk-Cx-OT6"/>
+                            <constraint firstItem="PYg-3l-WDD" firstAttribute="height" secondItem="w7E-eK-izB" secondAttribute="height" id="EKH-dS-8gi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w7E-eK-izB" secondAttribute="trailing" constant="96" id="HAs-7q-hej"/>
+                            <constraint firstItem="PYg-3l-WDD" firstAttribute="centerX" secondItem="MoW-ur-GzS" secondAttribute="centerX" id="KCM-5p-on1"/>
+                            <constraint firstItem="w7E-eK-izB" firstAttribute="leading" secondItem="PYg-3l-WDD" secondAttribute="leading" id="KyG-cE-CGo"/>
+                            <constraint firstItem="w7E-eK-izB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="96" id="XKK-rZ-WdK"/>
+                            <constraint firstItem="MoW-ur-GzS" firstAttribute="top" secondItem="PYg-3l-WDD" secondAttribute="bottom" constant="70" id="XZI-BP-Y2i"/>
+                            <constraint firstItem="HrM-EC-EPa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XdN-0T-bB9"/>
+                            <constraint firstItem="HrM-EC-EPa" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.286385" id="bB2-ER-xBN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MoW-ur-GzS" secondAttribute="bottom" id="guK-bA-9ey"/>
+                            <constraint firstItem="HrM-EC-EPa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mZQ-vO-SH9"/>
+                            <constraint firstItem="PYg-3l-WDD" firstAttribute="top" secondItem="w7E-eK-izB" secondAttribute="bottom" constant="20" id="ooy-7W-6pY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HrM-EC-EPa" secondAttribute="trailing" constant="16" id="wUZ-O6-S23"/>
+                            <constraint firstItem="w7E-eK-izB" firstAttribute="top" secondItem="HrM-EC-EPa" secondAttribute="bottom" constant="85" id="yaf-K7-7TG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ld0-cr-ETg"/>
                 </viewController>
@@ -234,18 +259,77 @@
         <!--Sepet-->
         <scene sceneID="THc-er-coY">
             <objects>
-                <viewController id="YO3-4B-YkH" sceneMemberID="viewController">
+                <viewController id="YO3-4B-YkH" customClass="CartViewController" customModule="AldinAldinShopping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TQ7-md-2N8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXv-Ip-vCh">
+                                <rect key="frame" x="16" y="103" width="361" height="485"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Black White Minimalist SImple Monogram Typography Logo" translatesAutoresizingMaskIntoConstraints="NO" id="qQ1-ZJ-Ljk">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="485"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RXt-R6-71C">
+                                <rect key="frame" x="16" y="103" width="361" height="485"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="YO3-4B-YkH" id="Zfl-bC-ojO"/>
+                                    <outlet property="delegate" destination="YO3-4B-YkH" id="7Kc-Um-JDO"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sepetiniz Boş" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ude-z1-gZE">
+                                <rect key="frame" x="80" y="596" width="233" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" systemColor="labelColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOr-cC-gtq">
+                                <rect key="frame" x="206" y="680" width="129" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Satın Al" cornerStyle="capsule">
+                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="checkoutButtonPressed:" destination="YO3-4B-YkH" eventType="touchUpInside" id="D0d-ny-WGU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toplam Fiyat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXy-SY-kQ7">
+                                <rect key="frame" x="16" y="670" width="97" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dU-vX-mpA">
+                                <rect key="frame" x="16" y="700" width="157" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Rzk-0h-2Ba"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Sepet" image="cart.fill" catalog="system" id="e3E-tt-8Hb"/>
+                    <connections>
+                        <outlet property="emptyCartView" destination="cXv-Ip-vCh" id="qjc-qC-Obt"/>
+                        <outlet property="tableView" destination="RXt-R6-71C" id="7mf-AZ-uab"/>
+                        <outlet property="totalPriceLabel" destination="8dU-vX-mpA" id="7ig-0b-Zju"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tc-FK-fav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4010" y="-437"/>
+            <point key="canvasLocation" x="4009.9236641221373" y="-437.32394366197184"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="haE-0C-Dv3">
@@ -613,7 +697,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tTd-g3-OaT"/>
+        <segue reference="hHN-Bc-WEN"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Black White Minimalist SImple Monogram Typography Logo" width="500" height="500"/>
