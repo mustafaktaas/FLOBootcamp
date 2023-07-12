@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Black White Minimalist SImple Monogram Typography Logo" translatesAutoresizingMaskIntoConstraints="NO" id="3oe-XZ-uJ1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cheapfy" translatesAutoresizingMaskIntoConstraints="NO" id="3oe-XZ-uJ1">
                                 <rect key="frame" x="-53.666666666666657" y="176" width="500.33333333333326" height="500"/>
                             </imageView>
                         </subviews>
@@ -34,7 +34,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Black White Minimalist SImple Monogram Typography Logo" width="500" height="500"/>
+        <image name="cheapfy" width="500" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -37,6 +37,11 @@ class CartViewController: UIViewController {
         totalCartCost = 0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NetworkUtils.checkConnection(in: self) {
+            NetworkUtils.retryButtonTapped(in: self)}
+    }
+    
     @IBAction func checkoutButtonPressed(_ sender: UIButton) {
         // firebase users-cuid icindeki tum datalari baska bi yere tasiyalim. cuid icindeki data bos olsun
         let userRef = database.collection("users").document(currentUserUid!)

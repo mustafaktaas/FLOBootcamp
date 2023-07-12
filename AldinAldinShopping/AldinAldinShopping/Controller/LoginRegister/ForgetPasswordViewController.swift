@@ -13,10 +13,9 @@ class ForgetPasswordViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        NetworkUtils.checkConnection(in: self) {
+            NetworkUtils.retryButtonTapped(in: self)}
     }
     
     @IBAction func newPasswordButton(_ sender: UIButton) {

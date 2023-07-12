@@ -30,6 +30,11 @@ class ProductDetailViewController: UIViewController {
         self.navigationItem.style = .editor
         fetchCategoryProducts(selectedId: ProductDetailViewController.selectedProductID)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NetworkUtils.checkConnection(in: self) {
+            NetworkUtils.retryButtonTapped(in: self)}
+    }
 
     @IBAction func addBasketButtonClicked(_ sender: UIButton) {
         updateCart(productId: ProductDetailViewController.selectedProductID, quantity: 1)

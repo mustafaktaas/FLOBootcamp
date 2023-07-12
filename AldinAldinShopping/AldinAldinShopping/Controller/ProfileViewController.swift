@@ -33,6 +33,8 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        NetworkUtils.checkConnection(in: self) {
+            NetworkUtils.retryButtonTapped(in: self)}
         fetchProfilePhotoFromFirebase()
         fetchUserNameAndEmail()
     }
@@ -151,7 +153,6 @@ extension ProfileViewController: UIImagePickerControllerDelegate {
 }
 
 extension ProfileViewController: UINavigationControllerDelegate {
-    //burayi silme
 }
 
 

@@ -26,6 +26,8 @@ class CategorizeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        NetworkUtils.checkConnection(in: self) {
+            NetworkUtils.retryButtonTapped(in: self)}
         CategorizeViewController.filteredProductList = []
         fetchCategoryProducts(category: CategorizeViewController.selectedCategory)
         categoryNameLabelSetup(name: CategorizeViewController.selectedCategory)

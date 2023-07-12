@@ -21,12 +21,10 @@ class RegisterViewController: UIViewController {
         Auth.auth().currentUser
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        NetworkUtils.checkConnection(in: self) {
+            NetworkUtils.retryButtonTapped(in: self)}
     }
     
     @IBAction func signUpButton(_ sender: UIButton) {

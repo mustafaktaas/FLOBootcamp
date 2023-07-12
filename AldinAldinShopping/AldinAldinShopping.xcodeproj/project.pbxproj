@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		242562092A55E0FD009A36B5 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242562072A55E0FD009A36B5 /* CartTableViewCell.swift */; };
 		2425620A2A55E0FD009A36B5 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 242562082A55E0FD009A36B5 /* CartTableViewCell.xib */; };
+		2436FDB42A5F3041008BA81B /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2436FDB32A5F3041008BA81B /* PaymentViewController.swift */; };
 		243F21F82A4B207D00213064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F21F72A4B207D00213064 /* AppDelegate.swift */; };
 		243F21FA2A4B207D00213064 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F21F92A4B207D00213064 /* SceneDelegate.swift */; };
 		243F21FC2A4B207D00213064 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243F21FB2A4B207D00213064 /* ViewController.swift */; };
@@ -77,6 +78,7 @@
 /* Begin PBXFileReference section */
 		242562072A55E0FD009A36B5 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		242562082A55E0FD009A36B5 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
+		2436FDB32A5F3041008BA81B /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		243F21F42A4B207D00213064 /* AldinAldinShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AldinAldinShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		243F21F72A4B207D00213064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		243F21F92A4B207D00213064 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				243F225B2A4B780300213064 /* ProfileViewController.swift */,
 				24C071BF2A4DBCD000D6B8E5 /* CategorizeViewController.swift */,
 				24C071C12A4DC4D000D6B8E5 /* ProductDetailViewController.swift */,
+				2436FDB32A5F3041008BA81B /* PaymentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				243F22522A4B36DF00213064 /* DuplicateFunctions.swift in Sources */,
 				243F225A2A4B77F600213064 /* CartViewController.swift in Sources */,
 				24C071A72A4D935000D6B8E5 /* CategoryData.swift in Sources */,
+				2436FDB42A5F3041008BA81B /* PaymentViewController.swift in Sources */,
 				243F21F82A4B207D00213064 /* AppDelegate.swift in Sources */,
 				24C071C62A4DC50800D6B8E5 /* CategorizeTableViewCell.swift in Sources */,
 				243F21FA2A4B207D00213064 /* SceneDelegate.swift in Sources */,

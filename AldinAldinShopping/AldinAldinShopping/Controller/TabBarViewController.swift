@@ -17,9 +17,13 @@ class TabBarViewController: UITabBarController {
         self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.tabBar.unselectedItemTintColor = .darkGray
         self.tabBar.tintColor = .systemCyan
-
-        // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NetworkUtils.checkConnection(in: self) {
+            NetworkUtils.retryButtonTapped(in: self)}
+    }
+    
     override func tabBar( _ tabBar: UITabBar, didSelect item: UITabBarItem) {
         SimpleAnimationWhenSelectItem(item: item)
     }
