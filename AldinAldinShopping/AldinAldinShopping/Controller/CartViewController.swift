@@ -12,7 +12,7 @@ import Alamofire
 
 
 class CartViewController: UIViewController {
-
+    
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyCartView: UIView!
@@ -23,21 +23,26 @@ class CartViewController: UIViewController {
     private var totalCartCost: Double = 0
     private var cart: [String: Int]? = [:]
     private var isQuantityButtonTapped = false
-
+    
     static var cartItems: [ProductModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.layer.cornerRadius = 20
+        tableView.layer.masksToBounds = true
         listener()
         tableViewSetup()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        tableView.layer.cornerRadius = 20
+        tableView.layer.masksToBounds = true
         totalCartCost = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tableView.layer.cornerRadius = 20
+        tableView.layer.masksToBounds = true
         NetworkUtils.checkConnection(in: self) {
             NetworkUtils.retryButtonTapped(in: self)}
     }
@@ -48,26 +53,15 @@ class CartViewController: UIViewController {
         if CartViewController.cartItems.count == 0 {
             DuplicateFuncs.alertMessage(title: "ERROR", message: "Your cart is empty", vc: self)
         } else {
-            for product in CartViewController.cartItems {
-                if let productId = product.id {
-                    userRef.updateData([
-                        "\(productId)" : FieldValue.delete()
-                    ]) { error in
-                        if let error = error {
-                            print("error: \(error)")
-                        } else {
-                            CartViewController.cartItems = []
-                            DuplicateFuncs.alertMessage(title: "Order Success", message: "Your order has been placed", vc: self)
-                        }
-                    }
-                }
-            }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "PaymentViewController")
+            show(vc, sender: self)
         }
     }
-     
+    
     func tableViewSetup() {
         tableView.register(UINib(nibName: K.TableView.cartTableViewCell, bundle: nil), forCellReuseIdentifier: K.TableView.cartTableViewCell)
-//        tableView.rowHeight = CGFloat(160)
+        //        tableView.rowHeight = CGFloat(160)
     }
     
     func cartBadge(count: Int) {
@@ -96,7 +90,7 @@ class CartViewController: UIViewController {
                     
                     //Cart badge
                     self.cartBadge(count: CartViewController.cartItems.count)
-
+                    
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
@@ -115,13 +109,13 @@ class CartViewController: UIViewController {
                 print("Error fetching documents: \(error!)")
                 return
             }
-
+            
             if let data = document.data() {
                 self.isCartEmptyOnFirestore { isEmpty in
                     if isEmpty {
                         self.emptyCartView.isHidden = false
                         self.emptyCartView.alpha = 1.0
-
+                        
                         self.tableView.isHidden = true
                         self.tableView.alpha = 0
                         
@@ -131,7 +125,7 @@ class CartViewController: UIViewController {
                         self.tableView.reloadData()
                         
                         self.cartBadge(count: 0)
-                       
+                        
                     } else {
                         self.emptyCartView.isHidden = true
                         
@@ -185,7 +179,7 @@ class CartViewController: UIViewController {
             self.isQuantityButtonTapped = false
         }
     }
-
+    
     @objc func plusButtonTapped(_ sender: UIButton) {
         if isQuantityButtonTapped {
             return
@@ -200,7 +194,7 @@ class CartViewController: UIViewController {
             self.isQuantityButtonTapped = false
         }
     }
-
+    
     func updateProductQuantityOnFirestore(productId: Int, increment: Bool) {
         let userRef = database.collection("users").document(currentUserUid!)
         userRef.getDocument { document, error in
@@ -285,5 +279,5 @@ extension CartViewController: UITableViewDelegate {
             }
         }
     }
-
+    
 }

@@ -14,11 +14,13 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productImageView: UIImageView!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     override func awakeFromNib() {
         super.awakeFromNib()
 
         layer.cornerRadius = 15
         layer.masksToBounds = true
+        spinner.hidesWhenStopped = true
     }
 
 

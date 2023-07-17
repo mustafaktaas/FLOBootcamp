@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.hidesBarsOnSwipe = true
+        categoryCollectionView.isScrollEnabled = false
         productCollectionView.showsVerticalScrollIndicator = false
         collectionSetup()
         tabBarSetup()
@@ -27,14 +29,11 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.hidesBarsOnSwipe = false
         NetworkUtils.checkConnection(in: self) {
             NetworkUtils.retryButtonTapped(in: self)}
         fetchCategories()
         fetchProducts()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        HomeViewController.categoryList = []
     }
 
     func fetchProducts() {
@@ -83,7 +82,14 @@ class HomeViewController: UIViewController {
     
     func tabBarSetup() {
         self.tabBarController?.navigationItem.hidesBackButton = true
-        tabBarController!.tabBar.items?[1].badgeValue = "0"
+        
+        if let tabBarController = self.tabBarController, let tabBarItems = tabBarController.tabBar.items {
+            let desiredTabIndex = 1 // Anasayfa sekmesinin index numarasını buraya yazın
+            
+            if desiredTabIndex < tabBarItems.count {
+                tabBarItems[desiredTabIndex].badgeValue = "0"
+            }
+        }
     }
     
     func collectionSetup() {
@@ -170,10 +176,14 @@ extension HomeViewController: UICollectionViewDataSource {
         case productCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.CollectionViews.bottomCollectionViewNibNameAndIdentifier, for: indexPath) as! ProductCollectionViewCell
             let u = HomeViewController.productList[indexPath.row]
-            cell.productImageView.sd_setImage(with: URL(string: u.image!), placeholderImage: UIImage(systemName: "photo.on.rectangle.angled"))
+            cell.spinner.startAnimating() // Spinner'ı başlat
+            cell.productImageView.sd_setImage(with: URL(string: u.image!), placeholderImage: UIImage(systemName: "photo.on.rectangle.angled")) { (image, error, cacheType, url) in
+                        // Fotoğraf yüklendikten sonra
+                        cell.spinner.stopAnimating() // Spinner'ı durdur
+                    }
             cell.productNameLabel.text = u.title
-            cell.productRateLabel.text = "★ \(u.rate!) "
-            cell.productPriceLabel.text = "₺\(u.price!)"
+            cell.productRateLabel.text = "⭐️ \(u.rate!) "
+            cell.productPriceLabel.text = "$\(u.price!)"
             return cell
             
         default:

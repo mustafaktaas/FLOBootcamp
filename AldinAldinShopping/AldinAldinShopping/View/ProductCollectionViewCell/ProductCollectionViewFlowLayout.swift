@@ -12,7 +12,7 @@ import UIKit
 class ProductCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     let sutunSayisi: Int
-    var yukseklikOrani: CGFloat = (2.6 / 2.0)
+    var yukseklikOrani: CGFloat = (3.0 / 2.0)
     
     init(sutunSayisi: Int, minSutunAraligi: CGFloat = 0, minSatirAraligi: CGFloat = 0) {
         self.sutunSayisi = sutunSayisi

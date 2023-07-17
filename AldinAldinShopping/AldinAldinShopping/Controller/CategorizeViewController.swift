@@ -19,6 +19,8 @@ class CategorizeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.layer.cornerRadius = 20
+        tableView.layer.masksToBounds = true
         tableViewCellSetup()
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.style = .editor
@@ -26,6 +28,8 @@ class CategorizeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tableView.layer.cornerRadius = 10
+        tableView.layer.masksToBounds = true
         NetworkUtils.checkConnection(in: self) {
             NetworkUtils.retryButtonTapped(in: self)}
         CategorizeViewController.filteredProductList = []
@@ -94,8 +98,8 @@ extension CategorizeViewController: UITableViewDataSource {
         let u = CategorizeViewController.filteredProductList[indexPath.row]
         cell.productNameLabel.text = u.title
         cell.productDescriptionLabel.text = u.description
-        cell.productRateLabel.text = "★ \(u.rate!) "
-        cell.productPriceLabel.text = "\(u.price!)$"
+        cell.productRateLabel.text = "⭐️ \(u.rate!) "
+        cell.productPriceLabel.text = "$\(u.price!)$"
         cell.productImageView.sd_setImage(with: URL(string: u.image!), placeholderImage: UIImage(systemName: "photo"))
         return cell
     }

@@ -19,39 +19,50 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="07u-Ld-kh9">
                         <rect key="frame" x="0.0" y="6" width="200" height="140"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="140" id="Q7z-WE-6m8"/>
+                        </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="9pt-qJ-Qja">
-                        <rect key="frame" x="5" y="201" width="190" height="20.333333333333343"/>
+                        <rect key="frame" x="33.666666666666671" y="235" width="132.66666666666663" height="20.333333333333343"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHW-7K-F2b">
-                                <rect key="frame" x="0.0" y="0.0" width="98.666666666666671" height="20.333333333333332"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHW-7K-F2b">
+                                <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7H6-mk-Itw">
-                                <rect key="frame" x="148.66666666666666" y="0.0" width="41.333333333333343" height="20.333333333333332"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7H6-mk-Itw">
+                                <rect key="frame" x="91.333333333333343" y="0.0" width="41.333333333333343" height="20.333333333333332"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label urun ada fdsafdsafas" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8bv-eo-r7L">
-                        <rect key="frame" x="16" y="154" width="156" height="43"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label sfddsfsfsfsfsfsfsfdfsdf  fdsfsf sf sdf s f sf ds" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRt-dP-6Ke">
+                        <rect key="frame" x="16" y="154" width="168" height="73"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="73" id="slx-IE-1cK"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="28f-6h-PaC">
+                        <rect key="frame" x="81.666666666666671" y="57.666666666666657" width="37" height="37"/>
+                    </activityIndicatorView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="07u-Ld-kh9" firstAttribute="top" secondItem="5d5-Wb-oOo" secondAttribute="top" constant="6" id="7Zl-cH-T7v"/>
-                    <constraint firstItem="9pt-qJ-Qja" firstAttribute="top" secondItem="8bv-eo-r7L" secondAttribute="bottom" constant="4" id="IZ4-M2-vQQ"/>
-                    <constraint firstItem="9pt-qJ-Qja" firstAttribute="leading" secondItem="5d5-Wb-oOo" secondAttribute="leading" constant="5" id="KNU-hC-6v5"/>
+                    <constraint firstItem="28f-6h-PaC" firstAttribute="centerY" secondItem="07u-Ld-kh9" secondAttribute="centerY" id="AZM-Ur-uae"/>
                     <constraint firstItem="07u-Ld-kh9" firstAttribute="leading" secondItem="5d5-Wb-oOo" secondAttribute="leading" id="Nyq-r3-oph"/>
-                    <constraint firstItem="8bv-eo-r7L" firstAttribute="top" secondItem="07u-Ld-kh9" secondAttribute="bottom" constant="8" symbolic="YES" id="OKi-2O-9fL"/>
-                    <constraint firstItem="07u-Ld-kh9" firstAttribute="centerX" secondItem="9pt-qJ-Qja" secondAttribute="centerX" id="xIZ-zd-Hfa"/>
+                    <constraint firstItem="WRt-dP-6Ke" firstAttribute="top" secondItem="07u-Ld-kh9" secondAttribute="bottom" constant="8" id="T7r-nP-bmK"/>
+                    <constraint firstItem="28f-6h-PaC" firstAttribute="centerX" secondItem="07u-Ld-kh9" secondAttribute="centerX" id="cfA-uF-Bh0"/>
+                    <constraint firstItem="9pt-qJ-Qja" firstAttribute="top" secondItem="WRt-dP-6Ke" secondAttribute="bottom" constant="8" symbolic="YES" id="csq-ax-vtf"/>
+                    <constraint firstItem="WRt-dP-6Ke" firstAttribute="leading" secondItem="5d5-Wb-oOo" secondAttribute="leading" constant="16" id="ljf-Rn-jyW"/>
+                    <constraint firstItem="WRt-dP-6Ke" firstAttribute="centerX" secondItem="9pt-qJ-Qja" secondAttribute="centerX" id="slr-hV-HJj"/>
+                    <constraint firstAttribute="trailing" secondItem="WRt-dP-6Ke" secondAttribute="trailing" constant="16" id="tcU-u0-vh4"/>
                     <constraint firstAttribute="trailing" secondItem="07u-Ld-kh9" secondAttribute="trailing" id="z9J-uG-cEF"/>
                 </constraints>
             </collectionViewCellContentView>
@@ -60,9 +71,10 @@
             <size key="customSize" width="233" height="280"/>
             <connections>
                 <outlet property="productImageView" destination="07u-Ld-kh9" id="IOv-cJ-qg8"/>
-                <outlet property="productNameLabel" destination="8bv-eo-r7L" id="TcB-Mj-aW1"/>
+                <outlet property="productNameLabel" destination="WRt-dP-6Ke" id="O8R-mo-Bhb"/>
                 <outlet property="productPriceLabel" destination="eHW-7K-F2b" id="osP-AP-gr0"/>
                 <outlet property="productRateLabel" destination="7H6-mk-Itw" id="Lmp-K1-Knb"/>
+                <outlet property="spinner" destination="28f-6h-PaC" id="KyR-0U-yIz"/>
             </connections>
             <point key="canvasLocation" x="-393.89312977099235" y="-296.47887323943661"/>
         </collectionViewCell>
