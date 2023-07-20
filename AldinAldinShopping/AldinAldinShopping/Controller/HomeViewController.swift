@@ -29,13 +29,18 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
-        self.navigationController?.hidesBarsOnSwipe = false
+        self.navigationController?.hidesBarsOnSwipe = true
         NetworkUtils.checkConnection(in: self) {
             NetworkUtils.retryButtonTapped(in: self)}
         fetchCategories()
         fetchProducts()
     }
-
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.hidesBarsOnSwipe = true
+    }
+    
     func fetchProducts() {
         HomeViewController.productList  = []
         AF.request(K.Network.baseURL).response { response in
@@ -130,7 +135,7 @@ class HomeViewController: UIViewController {
     func changeVCHomeToProductDetail(id: Int) {
         ProductDetailViewController.selectedProductID = id
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: K.Segues.productDetailViewController)
+        let vc = storyboard.instantiateViewController(withIdentifier: K.Segues.productDetailViewController) 
         show(vc, sender: self)
     }
     
@@ -198,7 +203,6 @@ extension HomeViewController: UICollectionViewDelegate {
         switch collectionView {
             
         case categoryCollectionView:
-            // TODO: Safely unwrapped index controlü koy
             if let category = HomeViewController.categoryList[indexPath.row].category {
                 changeVCcategoryToTableView(category: category)
             }

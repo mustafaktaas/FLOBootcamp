@@ -16,6 +16,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyCartView: UIView!
+    @IBOutlet weak var emptyLabel: UILabel!
     
     private let database = Firestore.firestore()
     private let currentUserUid = Auth.auth().currentUser?.uid

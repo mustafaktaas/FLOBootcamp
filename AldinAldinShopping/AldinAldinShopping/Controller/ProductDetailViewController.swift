@@ -32,6 +32,7 @@ class ProductDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
         NetworkUtils.checkConnection(in: self) {
             NetworkUtils.retryButtonTapped(in: self)}
     }

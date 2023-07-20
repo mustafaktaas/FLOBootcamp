@@ -23,6 +23,7 @@ class CategorizeViewController: UIViewController {
         tableView.layer.masksToBounds = true
         tableViewCellSetup()
         self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.title = "mustafa"
         self.navigationItem.style = .editor
         tableView.showsVerticalScrollIndicator = false
     }
