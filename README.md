@@ -8,20 +8,18 @@ All projects in FLO iOS Developer Bootcamp.
 Not: Projenin ismi başta türkçe olarak düşünüldüğünden AldinAldin olarak ayarlanmıştı. Daha sonra uygulama ingilizce diline çevrilmiştir ve bu sebepten ismi Cheapfy olarak değiştirilmiştir. Bir sonraki versiyonda proje ismi güncellenecektir.
 
 <img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/a8acefcc-4d9d-4a68-9ac7-15f494e69a7a" alt="alt text" width="180" height="380">
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 46 15](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/a8acefcc-4d9d-4a68-9ac7-15f494e69a7a)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 46 22](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/f9ffc6b9-5d37-461d-8888-00c5cde54856)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 46 34](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/a2d670d2-21b4-4343-b656-deda5e1b4561)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 46 27](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/b203c512-6e84-4d25-b3ff-cb1ad6a6cd59)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 48 40](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/c4b7e8b9-3fe0-4f2a-956e-47ffc9d62be9)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 48 45](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/2bba1f89-c86d-4ddf-bc04-17b610457564)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 48 50](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/78d3f589-341f-45de-a489-a478b373f071)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 49 56](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/0e574f05-e313-4e0d-9fbe-bea1816860e8)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 49 28](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/787fd43e-6b60-439f-aaa3-ad2f61cfdf58)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 49 42](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/9a72ed6b-e571-4f45-91fc-55741b568b9a)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 49 49](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/7f6bdf5f-3a46-4708-91e4-ae505722b840)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 50 02](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/5a941de9-d4a8-41ae-b2fa-922bbd1add88)
-![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 19 09 45](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/2f9141ad-8dd7-4a15-9b17-0f8e066f520f)
-
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/f9ffc6b9-5d37-461d-8888-00c5cde54856" alt="alt text" width="180" height="380">
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/a2d670d2-21b4-4343-b656-deda5e1b4561" alt="alt text" width="180" height="380">
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/b203c512-6e84-4d25-b3ff-cb1ad6a6cd59" alt="alt text" width="180" height="380">
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/c4b7e8b9-3fe0-4f2a-956e-47ffc9d62be9" alt="alt text" width="180" height="380">
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/2bba1f89-c86d-4ddf-bc04-17b610457564" alt="alt text" width="180" height="380">
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/78d3f589-341f-45de-a489-a478b373f071" alt="alt text" width="180" height="380">
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/0e574f05-e313-4e0d-9fbe-bea1816860e8" alt="alt text" width="180" height="380">
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/787fd43e-6b60-439f-aaa3-ad2f61cfdf58" alt="alt text" width="180" height="380">
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/9a72ed6b-e571-4f45-91fc-55741b568b9a" alt="alt text" width="180" height="380">
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/7f6bdf5f-3a46-4708-91e4-ae505722b840" alt="alt text" width="180" height="380">
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/5a941de9-d4a8-41ae-b2fa-922bbd1add88" alt="alt text" width="180" height="380">
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/2f9141ad-8dd7-4a15-9b17-0f8e066f520f" alt="alt text" width="180" height="380">
 
 ## Ödev Unlu Alıntılar
 
