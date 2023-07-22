@@ -23,5 +23,4 @@ class ProductCollectionViewCell: UICollectionViewCell {
         spinner.hidesWhenStopped = true
     }
 
-
 }

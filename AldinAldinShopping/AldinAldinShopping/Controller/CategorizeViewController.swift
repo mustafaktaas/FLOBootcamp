@@ -11,12 +11,14 @@ import SDWebImage
 
 class CategorizeViewController: UIViewController {
 
+    //MARK: - Properties
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     static var filteredProductList: [ProductModel] = []
     static var selectedCategory: String = ""
 
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.layer.cornerRadius = 20
@@ -37,11 +39,8 @@ class CategorizeViewController: UIViewController {
         fetchCategoryProducts(category: CategorizeViewController.selectedCategory)
         categoryNameLabelSetup(name: CategorizeViewController.selectedCategory)
     }
-
-    func tableViewCellSetup() {
-        tableView.register(UINib(nibName: K.TableView.categorizedTableViewCell, bundle: nil), forCellReuseIdentifier: K.TableView.categorizedTableViewCell)
-    }
     
+    //MARK: - Functions
     func categoryNameLabelSetup(name: String) {
         switch name {
         case "electronics":
@@ -86,14 +85,19 @@ class CategorizeViewController: UIViewController {
            }
        }
    }
+    
+    //MARK: - TableViewCells Setup
+    func tableViewCellSetup() {
+        tableView.register(UINib(nibName: K.TableView.categorizedTableViewCell, bundle: nil), forCellReuseIdentifier: K.TableView.categorizedTableViewCell)
+    }
 }
 
+//MARK: - Extensions
 extension CategorizeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CategorizeViewController.filteredProductList.count
     }
- 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.TableView.categorizedTableViewCell, for: indexPath) as! CategorizeTableViewCell
         let u = CategorizeViewController.filteredProductList[indexPath.row]

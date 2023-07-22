@@ -12,6 +12,7 @@ import Firebase
 
 class ProductDetailViewController: UIViewController {
 
+    //MARK: - Properties
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var productDescription: UILabel!
@@ -24,6 +25,7 @@ class ProductDetailViewController: UIViewController {
     private let currentUserUid = Auth.auth().currentUser?.uid
     private let database = Firestore.firestore()
 
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
@@ -37,13 +39,14 @@ class ProductDetailViewController: UIViewController {
             NetworkUtils.retryButtonTapped(in: self)}
     }
 
+    //MARK: - Interaction handlers
     @IBAction func addBasketButtonClicked(_ sender: UIButton) {
         updateCart(productId: ProductDetailViewController.selectedProductID, quantity: 1)
     }
 
+    //MARK: - Functions
     func updateCart(productId: Int, quantity: Int) {
         let userRef = database.collection("users").document(currentUserUid!)
-        //ayni urun sepette var ise urunun quantity 1 artirilacak.
         userRef.getDocument { document, error in
             if let document = document, document.exists {
                 if let data = document.data(), let _ = data["\(productId)"] {

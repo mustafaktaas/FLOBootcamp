@@ -31,7 +31,7 @@ class CategoryCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         let araliklar = collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(sutunSayisi - 1)
         
-        let elemaninGenisligi = (collectionView.bounds.size.width - araliklar) / CGFloat(sutunSayisi).rounded(.down) // .rouned(.down) ile asagiya yuvarladik.
+        let elemaninGenisligi = (collectionView.bounds.size.width - araliklar) / CGFloat(sutunSayisi).rounded(.down) 
         let elemaninYuksekligi = elemaninGenisligi * yukseklikOrani
         
         itemSize = CGSize(width: elemaninGenisligi, height: elemaninYuksekligi)

@@ -19,6 +19,7 @@ struct K {
     
     struct StoryboardID {
         static let welcomeVC = "WelcomeVC"
+        static let tabbarVC = "tabbarVC"
     }
     
     struct CollectionViews {

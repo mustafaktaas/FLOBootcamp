@@ -11,7 +11,7 @@ import FirebaseStorage
 
 class ProfileViewController: UIViewController {
 
-    
+    //MARK: - Properties
     @IBOutlet weak var profilePhotoImageView: UIImageView!
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -26,6 +26,7 @@ class ProfileViewController: UIViewController {
     private var email: String?
     private var username: String?
     
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +40,7 @@ class ProfileViewController: UIViewController {
         fetchUserNameAndEmail()
     }
 
+    //MARK: - Interaction handlers
     @IBAction func uploadProfilePhoto(_ sender: UIButton) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
@@ -49,6 +51,7 @@ class ProfileViewController: UIViewController {
         signOut()
     }
     
+    //MARK: - Functions
     func signOut() {
         do {
             try Auth.auth().signOut()
@@ -78,7 +81,6 @@ class ProfileViewController: UIViewController {
                     return
                 }
                 let downloadURL = url!.absoluteString
-                //burada resmin indirme url'sini firestore'ye kaydedecegiz.
                 self.database.collection("users").document(self.currentUserUid!).collection("userInfo").document(self.currentUserUid!).setData([
                     "profile_photo_url": downloadURL
                 ], merge: true) { error in
@@ -140,7 +142,8 @@ class ProfileViewController: UIViewController {
         profilePhotoImageView.layer.masksToBounds = true
     }
 }
-    
+
+//MARK: - Extensions
 extension ProfileViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {

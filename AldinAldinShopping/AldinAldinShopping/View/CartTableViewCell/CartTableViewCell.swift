@@ -21,18 +21,14 @@ class CartTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         quantity = 1
         
-        //koseleri yuvarlaklastirma
         layer.cornerRadius = 20
         layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     @IBAction func minusButtonPressed(_ sender: UIButton) {

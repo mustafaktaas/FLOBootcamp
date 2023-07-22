@@ -11,12 +11,14 @@ import SDWebImage
 
 class HomeViewController: UIViewController {
 
+    //MARK: - Properties
     @IBOutlet weak var productCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     static var productList: [ProductModel] = []
     static var categoryList: [CategoryModel] = []
     
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
@@ -36,6 +38,7 @@ class HomeViewController: UIViewController {
         fetchProducts()
     }
     
+    //MARK: - Functions
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.navigationController?.isNavigationBarHidden = true
         self.navigationController?.hidesBarsOnSwipe = true
@@ -89,23 +92,12 @@ class HomeViewController: UIViewController {
         self.tabBarController?.navigationItem.hidesBackButton = true
         
         if let tabBarController = self.tabBarController, let tabBarItems = tabBarController.tabBar.items {
-            let desiredTabIndex = 1 // Anasayfa sekmesinin index numarasını buraya yazın
+            let desiredTabIndex = 1 
             
             if desiredTabIndex < tabBarItems.count {
                 tabBarItems[desiredTabIndex].badgeValue = "0"
             }
         }
-    }
-    
-    func collectionSetup() {
-        categoryCollectionView.register(UINib(nibName: K.CollectionViews.topCollectionViewNibNameAndIdentifier, bundle: nil), forCellWithReuseIdentifier: K.CollectionViews.topCollectionViewNibNameAndIdentifier)
-        
-        categoryCollectionView.collectionViewLayout = CategoryCollectionViewFlowLayout(sutunSayisi: 2, minSutunAraligi: 5, minSatirAraligi: 5)
-        
-        
-        productCollectionView.register(UINib(nibName: K.CollectionViews.bottomCollectionViewNibNameAndIdentifier, bundle: nil), forCellWithReuseIdentifier: K.CollectionViews.bottomCollectionViewNibNameAndIdentifier)
-        
-        productCollectionView.collectionViewLayout = ProductCollectionViewFlowLayout(sutunSayisi: 2, minSutunAraligi: 5, minSatirAraligi: 5)
     }
     
     func changeVCcategoryToTableView(category: String) {
@@ -139,8 +131,21 @@ class HomeViewController: UIViewController {
         show(vc, sender: self)
     }
     
+    //MARK: - CollectionCells Setup
+    func collectionSetup() {
+        categoryCollectionView.register(UINib(nibName: K.CollectionViews.topCollectionViewNibNameAndIdentifier, bundle: nil), forCellWithReuseIdentifier: K.CollectionViews.topCollectionViewNibNameAndIdentifier)
+        
+        categoryCollectionView.collectionViewLayout = CategoryCollectionViewFlowLayout(sutunSayisi: 2, minSutunAraligi: 5, minSatirAraligi: 5)
+        
+        
+        productCollectionView.register(UINib(nibName: K.CollectionViews.bottomCollectionViewNibNameAndIdentifier, bundle: nil), forCellWithReuseIdentifier: K.CollectionViews.bottomCollectionViewNibNameAndIdentifier)
+        
+        productCollectionView.collectionViewLayout = ProductCollectionViewFlowLayout(sutunSayisi: 2, minSutunAraligi: 5, minSatirAraligi: 5)
+    }
 }
 
+
+//MARK: - Extensions
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
@@ -181,10 +186,9 @@ extension HomeViewController: UICollectionViewDataSource {
         case productCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.CollectionViews.bottomCollectionViewNibNameAndIdentifier, for: indexPath) as! ProductCollectionViewCell
             let u = HomeViewController.productList[indexPath.row]
-            cell.spinner.startAnimating() // Spinner'ı başlat
+            cell.spinner.startAnimating()
             cell.productImageView.sd_setImage(with: URL(string: u.image!), placeholderImage: UIImage(systemName: "photo.on.rectangle.angled")) { (image, error, cacheType, url) in
-                        // Fotoğraf yüklendikten sonra
-                        cell.spinner.stopAnimating() // Spinner'ı durdur
+                        cell.spinner.stopAnimating() 
                     }
             cell.productNameLabel.text = u.title
             cell.productRateLabel.text = "⭐️ \(u.rate!) "

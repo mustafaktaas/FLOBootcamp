@@ -10,7 +10,7 @@ import Firebase
 
 class RegisterViewController: UIViewController {
 
-    
+    //MARK: - Properties
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,6 +21,7 @@ class RegisterViewController: UIViewController {
         Auth.auth().currentUser
     }
     
+    //MARK: - Interaction handlers
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         NetworkUtils.checkConnection(in: self) {
@@ -30,12 +31,10 @@ class RegisterViewController: UIViewController {
     @IBAction func signUpButton(_ sender: UIButton) {
         if let email = emailTextField.text, let password = passwordTextField.text, let confirmPassword = confirmPasswordTextField.text, let username = usernameTextField.text {
             if isPasswordsMatch(password: password, confirmPassword: confirmPassword) {
-                //if passwords match, go to Authentication. else, make alert.
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     if let error = error {
                         DuplicateFuncs.alertMessage(title: "ERROR", message: error.localizedDescription, vc: self)
                     } else {
-                        //firestore denemesi
                         let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                         changeRequest?.displayName = self.usernameTextField.text
                         changeRequest?.commitChanges(completion: { error in
@@ -55,8 +54,6 @@ class RegisterViewController: UIViewController {
                             }
                         }
                         
-                        //testing fix-1
-                        //dokumanda bos veri seti baslatmamiz lazim cunku dokumandaki data nil olursa query ve snapshot burayi okuyamiyor. Bos mu diye kontrol edemiyor cunku dokumanin datasini okuyamiyor. Okumasi icin bos data set ediyorum. Aksi takdirde data okunamadigi icin hicbir isler calismiyor.
                         self.database.collection("users").document(userUid).setData([:])
                         
                         self.sendVerificationMail()
@@ -75,6 +72,7 @@ class RegisterViewController: UIViewController {
         self.performSegue(withIdentifier: K.Segues.registerToLogin, sender: self)
     }
     
+    //MARK: - Functions
     func sendVerificationMail() {
         if authUser != nil && !authUser!.isEmailVerified {
             authUser?.sendEmailVerification(completion: { error in

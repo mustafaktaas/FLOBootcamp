@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //MARK: - Life cycle
     override func viewWillAppear(_ animated: Bool) {
             // Connection Check
             NetworkUtils.checkConnection(in: self) {

@@ -190,14 +190,13 @@
 		243F21F62A4B207D00213064 /* AldinAldinShopping */ = {
 			isa = PBXGroup;
 			children = (
-				246D58952A686BAF00E43BB6 /* CoreDataMap.xcmappingmodel */,
-				246D58912A685EDC00E43BB6 /* CoreData.xcdatamodeld */,
-				243F224F2A4B353E00213064 /* GoogleService-Info.plist */,
-				243F22052A4B207D00213064 /* Info.plist */,
 				243F220B2A4B208600213064 /* Model */,
 				243F220C2A4B208D00213064 /* View */,
 				243F220D2A4B209200213064 /* Controller */,
 				243F220E2A4B209800213064 /* Supporting Files */,
+				24CA6B402A6BD5E10060084E /* Database */,
+				243F224F2A4B353E00213064 /* GoogleService-Info.plist */,
+				243F22052A4B207D00213064 /* Info.plist */,
 			);
 			path = AldinAldinShopping;
 			sourceTree = "<group>";
@@ -294,6 +293,15 @@
 				24C071C42A4DC50800D6B8E5 /* CategorizeTableViewCell.swift */,
 			);
 			path = CategorizeTableViewCell;
+			sourceTree = "<group>";
+		};
+		24CA6B402A6BD5E10060084E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				246D58952A686BAF00E43BB6 /* CoreDataMap.xcmappingmodel */,
+				246D58912A685EDC00E43BB6 /* CoreData.xcdatamodeld */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,7 +596,7 @@
 				DEVELOPMENT_TEAM = 86J9X6XJ4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AldinAldinShopping/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AldinAldin;
+				INFOPLIST_KEY_CFBundleDisplayName = Cheapfy;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -617,7 +625,7 @@
 				DEVELOPMENT_TEAM = 86J9X6XJ4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AldinAldinShopping/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AldinAldin;
+				INFOPLIST_KEY_CFBundleDisplayName = Cheapfy;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -847,8 +855,7 @@
 				246D58922A685EDC00E43BB6 /* CoreData.xcdatamodel */,
 			);
 			currentVersion = 246D58922A685EDC00E43BB6 /* CoreData.xcdatamodel */;
-			name = CoreData.xcdatamodeld;
-			path = ../CoreData.xcdatamodeld;
+			path = CoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

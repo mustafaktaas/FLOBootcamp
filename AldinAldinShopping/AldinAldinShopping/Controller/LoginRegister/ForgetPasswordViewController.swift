@@ -10,14 +10,16 @@ import Firebase
 
 class ForgetPasswordViewController: UIViewController {
 
-    
+    //MARK: - Properties
     @IBOutlet weak var emailTextField: UITextField!
     
+    //MARK: - Life cycle
     override func viewWillAppear(_ animated: Bool) {
         NetworkUtils.checkConnection(in: self) {
             NetworkUtils.retryButtonTapped(in: self)}
     }
     
+    //MARK: - Interaction handlers
     @IBAction func newPasswordButton(_ sender: UIButton) {
         if let email = emailTextField.text {
             if email == "" {

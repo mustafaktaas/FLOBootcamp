@@ -13,6 +13,7 @@ import Alamofire
 
 class CartViewController: UIViewController {
     
+    //MARK: - Properties
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyCartView: UIView!
@@ -27,18 +28,21 @@ class CartViewController: UIViewController {
     
     static var cartItems: [ProductModel] = []
     
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.layer.cornerRadius = 20
         tableView.layer.masksToBounds = true
         listener()
         tableViewSetup()
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         tableView.layer.cornerRadius = 20
         tableView.layer.masksToBounds = true
         totalCartCost = 0
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,10 +50,11 @@ class CartViewController: UIViewController {
         tableView.layer.masksToBounds = true
         NetworkUtils.checkConnection(in: self) {
             NetworkUtils.retryButtonTapped(in: self)}
+        self.navigationController?.isNavigationBarHidden = true
     }
     
+    //MARK: - Interaction handlers
     @IBAction func checkoutButtonPressed(_ sender: UIButton) {
-        // firebase users-cuid icindeki tum datalari baska bi yere tasiyalim. cuid icindeki data bos olsun
         let userRef = database.collection("users").document(currentUserUid!)
         if CartViewController.cartItems.count == 0 {
             DuplicateFuncs.alertMessage(title: "ERROR", message: "Your cart is empty", vc: self)
@@ -60,11 +65,7 @@ class CartViewController: UIViewController {
         }
     }
     
-    func tableViewSetup() {
-        tableView.register(UINib(nibName: K.TableView.cartTableViewCell, bundle: nil), forCellReuseIdentifier: K.TableView.cartTableViewCell)
-        //        tableView.rowHeight = CGFloat(160)
-    }
-    
+    //MARK: - Functions
     func cartBadge(count: Int) {
         if let tabBarController = self.tabBarController {
             if let tabBarItem = tabBarController.tabBar.items?[1] {
@@ -81,15 +82,12 @@ class CartViewController: UIViewController {
                     let productData = try JSONDecoder().decode(ProductData.self, from: response.data!)
                     CartViewController.cartItems.append(ProductModel(id: productData.id, title: productData.title, price:Float(productData.price), image: productData.image, rate: Float(productData.rating.rate), category: productData.category, description: productData.description, count: productData.rating.count, quantityCount: quantity))
                     
-                    //Urunleri fiyatina gore siralar.
                     CartViewController.cartItems.sort(by: { $0.price! < $1.price! })
                     
-                    //Urun fiyatlarini kac adet ise ona gore totalCartCost'a ekler.
                     self.totalCartCost += productData.price * Double(quantity)
                     let formattedTotalCartCost = String(format: "%.2f", self.totalCartCost)
                     self.totalPriceLabel.text = "$\(formattedTotalCartCost)"
                     
-                    //Cart badge
                     self.cartBadge(count: CartViewController.cartItems.count)
                     
                     DispatchQueue.main.async {
@@ -164,8 +162,6 @@ class CartViewController: UIViewController {
         }
     }
     
-    //Fonksiyon seri art arda basislarda fatal error (out of range) sebebiyle "Debouncing" mekanizmasi haline getirildi.
-    //Bu sayede hizli, cift, art arda tiklamalardan kaynakli sorunlarin onune gecildi.
     @objc func minusButtonTapped(_ sender: UIButton) {
         if isQuantityButtonTapped {
             return
@@ -222,8 +218,14 @@ class CartViewController: UIViewController {
             }
         }
     }
+    
+    //MARK: - TableViewCells Setup
+    func tableViewSetup() {
+        tableView.register(UINib(nibName: K.TableView.cartTableViewCell, bundle: nil), forCellReuseIdentifier: K.TableView.cartTableViewCell)
+    }
 }
 
+//MARK: - Extensions
 extension CartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CartViewController.cartItems.count

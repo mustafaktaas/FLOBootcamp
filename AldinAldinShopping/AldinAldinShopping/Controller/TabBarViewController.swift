@@ -10,6 +10,7 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.layer.masksToBounds = true
@@ -30,6 +31,7 @@ class TabBarViewController: UITabBarController {
         SimpleAnimationWhenSelectItem(item: item)
     }
 
+    //MARK: - Functions
     func SimpleAnimationWhenSelectItem( item: UITabBarItem) {
         guard let barItemView = item.value(forKey: "view") as? UIView else { return }
 
@@ -46,6 +48,7 @@ class TabBarViewController: UITabBarController {
 
 }
 
+//MARK: - Extensions
 extension UIColor {
     convenience init?(hexString: String) {
         var formattedString = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

@@ -10,7 +10,7 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
-    
+    //MARK: - Properties
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
         Auth.auth().currentUser
     }
     
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         NetworkUtils.checkConnection(in: self) {
@@ -36,6 +37,7 @@ class LoginViewController: UIViewController {
             }
         }
     
+    //MARK: - Interaction handlers
     @IBAction func signInButton(_ sender: UIButton) {
         if let email = emailTextField.text, let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
@@ -56,7 +58,7 @@ class LoginViewController: UIViewController {
         self.performSegue(withIdentifier: K.Segues.loginToForget, sender: self)
     }
     
-    
+    //MARK: - Functions
     func isEmailVerified() -> Bool {
         if authUser != nil && !authUser!.isEmailVerified {
             return true
