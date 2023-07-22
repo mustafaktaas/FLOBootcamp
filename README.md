@@ -7,6 +7,7 @@ All projects in FLO iOS Developer Bootcamp.
 
 Not: Projenin ismi başta türkçe olarak düşünüldüğünden AldinAldin olarak ayarlanmıştı. Daha sonra uygulama ingilizce diline çevrilmiştir ve bu sebepten ismi Cheapfy olarak değiştirilmiştir. Bir sonraki versiyonda proje ismi güncellenecektir.
 
+<img src="https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/a8acefcc-4d9d-4a68-9ac7-15f494e69a7a" alt="alt text" width="320" height="180">
 ![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 46 15](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/a8acefcc-4d9d-4a68-9ac7-15f494e69a7a)
 ![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 46 22](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/f9ffc6b9-5d37-461d-8888-00c5cde54856)
 ![Simulator Screenshot - iPhone 14 Pro - 2023-07-22 at 18 46 34](https://github.com/mustafaktaas/FLOBootcamp/assets/81692484/a2d670d2-21b4-4343-b656-deda5e1b4561)
